@@ -7,5 +7,7 @@ elif levels > 24:
 
 else:
      for i in range(levels, 0, -1):
-        print("#")
+        print(" ")
+        for j in range(levels):
+            print("#")
     
