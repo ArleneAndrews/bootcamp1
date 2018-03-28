@@ -1,7 +1,11 @@
-while True:
-    print("How many levels? Max 23")
-    levels = input()
-    if 0 < int(levels) < 24:
-        continue
-    for i in range (int(levels), -1, -1):
-        for j in range (1, int(levels), 1):
+levels = int(input("How many levels? Max 23 "))
+if 0 > levels:
+    print("I can't print that type yet!")
+
+elif levels > 24:
+    print("Too tall! Less than 24, please.")
+
+else:
+     for i in range(levels, 0, -1):
+        print("#")
+    
