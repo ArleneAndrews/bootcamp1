@@ -1,0 +1,122 @@
+body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; /*background: url(https://www.facebook.com/spacecadetsglass/photos/a.799502053547277.1073741827.799501330214016/834239586740190/?type=3);*/ line-height: 1.6em; }
+.lhnInviteContainer { z-index: 10000000; width: 278px; display: none; line-height: 22px; position: fixed; top: 150px; padding: 15px; border-radius: 8px; border: 1px solid rgb(255, 255, 255); box-shadow: rgb(204, 204, 204) 3px 3px 7px; font-size: 16px; text-align: center; font-family: Tahoma, sans-serif; color: rgb(255, 255, 255); background-color: rgb(156, 0, 0); }
+.lhnInviteContainer .LHNInviteTitle { color: rgb(255, 255, 255); margin-bottom: 5px; font-size: 18px; width: 100%; }
+.lhnInviteContainer .LHNInviteMessage { margin-bottom: 8px; padding-bottom: 12px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); width: 100%; }
+.LHNInviteButtons { width: 100%; }
+a { text-decoration: none; }
+a:link { color: rgb(0, 0, 0); }
+a:visited { color: rgb(0, 0, 0); text-decoration: none; }
+.lhnInviteContainer .LHNInviteCloseButton { color: rgb(0, 0, 0); position: absolute; top: -12px; right: -12px; height: 24px; width: 24px; font-size: 20px; text-decoration: none; border-radius: 12px; line-height: 20px; background-color: rgb(255, 255, 255); }
+.lhnInviteContainer .LHNInviteAcceptButton { font-size: 18px; color: rgb(0, 0, 0); text-decoration: none; display: inline-block; padding: 5px 20px 7px; background-color: rgb(255, 255, 255); }
+.fb_reset { border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; background: none; }
+.fb_reset > div { overflow: hidden; }
+#main-container1 { width: 100%; min-height: 200px; background-image: url(https://www.hookahcompany.com/images_templ/hc/tob-bar-bg.png); background-repeat: repeat-x; }
+#main-container2 { width: 980px; margin: auto; }
+#header-box { float: left; width: 980px; }
+#top-bar { float: left; height: 32px; padding: 8px 0px 0px; width: 996px; }
+#tag-line { float: left; }
+img { border: none; }
+#top-links { float: left; padding: 0px 0px 0px 84px; width: 610px; }
+ul, li, h1, h2, h3, form, table, td, tr, input { margin: 0px; padding: 0px; list-style: none; }
+#top-links li { float: left; background: url(https://www.hookahcompany.com/images_templ/hc/top-link-divider.png) 100% 50% no-repeat; }
+#top-links li a { color: rgb(255, 255, 255); margin: 0px 18px; padding: 0px 6px 0px 0px; display: block; font-family: Arial; }
+#top-links li.top-link-last { float: right; display: block; width: 94px; text-align: left; background: url(https://www.hookahcompany.com/images_templ/hc/new-hc-cart.png) 0% 0% no-repeat; }
+#top-links li.top-link-last a { margin: 0px; padding-left: 24px; }
+#logo-box { float: left; padding: 0px 0px 10px 15px; }
+#search-box { float: left; margin: 18px 45px 0px 47px; width: 358px; height: 46px; background: url(https://www.hookahcompany.com/images_templ/hc/search-bg.png) no-repeat; }
+input, form { padding: 0px; margin: 0px; display: inline; }
+#search-box #searchQueryInputField { width: 310px; height: 22px; float: left; border: none; position: relative; top: 14px; left: 14px; font-size: 14px; margin-right: 10px; line-height: 16px; font-style: italic; outline: none; background: transparent; }
+#search-box #searchSubmitBtn { width: 22px; height: 22px; float: left; position: relative; top: 12px; }
+#contact-info { float: left; padding: 8px 0px 0px; width: 300px; margin-top: 8px; }
+#contact-info div { position: relative; float: left; left: 4px; top: 3px; border: 0px; }
+.left { float: left; }
+#top-nav { float: left; width: 994px; height: 33px; border-bottom-color: rgb(255, 143, 0); border-bottom-width: 3px; border-bottom-style: none; padding-bottom: 17px; }
+#top-nav-linkbox { width: 882px; float: left; }
+#top-nav-linkbox, #social-links { border-bottom-color: rgb(255, 143, 0); border-bottom-width: 3px; border-bottom-style: solid; }
+#top-nav-linkbox li { float: left; width: 147px; text-align: center; display: block; height: 33px; line-height: 33px; background: url(https://www.hookahcompany.com/images_templ/hc/top-nav-divider.png) 100% 50% no-repeat; }
+#top-nav-linkbox li a { width: 145px; margin: 0px 2px 0px 0px; font-size: 14px; color: rgb(255, 255, 255); display: block; height: 33px; line-height: 33px; background: url(https://www.hookahcompany.com/images_templ/hc/hnav_sprite.png) 0px -33px repeat-x; }
+#social-links { float: left; width: 94px; padding: 6px 0px 0px 3px; height: 27px; background: url(https://www.hookahcompany.com/images_templ/hc/hnav_sprite.png) 0px -33px repeat-x; }
+#social-links img { margin: 0px 3px 0px 2px; }
+#main-middle-area { float: left; width: 980px; padding: 17px 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 17px; }
+#left-side-wrapper { float: left; width: 178px; overflow: hidden; margin-right: 14px; }
+#left-side-box { float: left; width: 148px; margin: 0px; padding: 14px 14px 10px 16px; position: relative; background: url(https://www.hookahcompany.com/images_templ/hc/blank.png); }
+#custom-links { float: left; position: relative; width: 148px; margin-bottom: 10px; }
+#custom-links-header { float: left; width: 148px; font-size: 12px; font-weight: bold; color: rgb(255, 143, 0); height: 20px; line-height: 20px; }
+#custom-links ul { margin: 0px; padding: 0px; width: 148px; }
+#custom-links li { margin: 0px; padding: 0px 0px 0px 12px; list-style: none; line-height: 18px; float: left; display: block; background: url(https://www.hookahcompany.com/images_templ/hc/bullet-leftmenu.png) 4px 5px no-repeat; }
+#custom-links a { color: rgb(255, 255, 255); text-decoration: none; }
+#menu_categorytypes { width: 148px; float: left; display: block; margin: 0px; padding: 0px; }
+#menu_categorytypes li { padding: 0px; width: 148px; line-height: 18px; float: left; }
+#menu_categorytypes li.class_menuitem_categorytype { float: left; width: 148px; line-height: 18px; border-top-width: 1px; border-top-style: dotted; border-top-color: rgb(215, 215, 215); padding-top: 10px; }
+#menu_categorytypes span.categorytype-name { font-size: 12px; font-weight: bold; color: rgb(255, 143, 0); height: 18px; line-height: 18px; margin: 0px; padding: 0px; }
+.menu_categorytype { margin: 0px; padding: 0px; float: left; display: inline-block; clear: both; }
+#menu_categorytypes li ul { margin: 0px; float: left; }
+#menu_categorytypes ul.menu_categorytype { padding-bottom: 10px; }
+.menu_categorytype li.class_menuitem_category a.menuitem_category_link { margin: 0px; padding: 0px 0px 0px 12px; list-style: none; line-height: 18px; width: 136px; float: left; color: rgb(255, 255, 255); text-decoration: none; background: url(https://www.hookahcompany.com/images_templ/hc/bullet-leftmenu.png) 4px 5px no-repeat; }
+#right-side-box { float: right; width: 788px; }
+#home-top-banner { width: 788px; float: left; clear: both; }
+#home-ctg-listing { width: 788px; float: left; padding: 14px 0px; clear: both; }
+#home-bestseller { width: 788px; float: left; clear: both; margin-bottom: 12px; padding-bottom: 0px; background: url(https://www.hookahcompany.com/images_templ/hc/blank.png); }
+#home-bestseller-head { width: 770px; height: 25px; color: rgb(255, 255, 255); line-height: 25px; padding-left: 18px; font-size: 18px; text-transform: uppercase; background: rgb(37, 37, 37); }
+#brief-wrapper-full { width: 788px; float: left; margin: 4px 0px; }
+.brief-wrap { position: relative; width: 174px; height: 390px; float: left; margin: 8px 11px 8px 12px; padding: 0px; overflow: hidden; background: rgb(255, 255, 255); }
+#home-bestseller .brief-wrap { height: 365px; }
+.brief-image { width: 174px; height: 188px; text-align: center; position: relative; overflow: hidden; display: table; }
+#home-bestseller .brief-image { height: 130px; }
+a.custom_quicklook { display: none; float: left; position: absolute; top: 0px; left: 0px; }
+.brief-image img { max-width: 130px; max-height: 200px; }
+a.custom_quicklook img { width: 30px; height: 30px; position: absolute; float: left; cursor: pointer; left: 4px; top: 6px; opacity: 0.7; }
+.brief-image a.product_link { display: table-cell; vertical-align: middle; }
+.brief-name { width: 160px; height: 32px; float: left; text-align: center; position: relative; left: 7px; padding: 2px 0px; color: rgb(0, 0, 0); font-size: 14px; overflow: hidden; }
+.brief-name a { color: rgb(0, 0, 0); font-size: 14px; display: block; }
+.pr_snippet_category { float: left; padding: 1px 0px; width: 170px; cursor: pointer; }
+.pr-snippet { height: 15px; padding-right: 4px; position: relative; }
+.pr-snippet-wrapper { border: 1px solid rgb(203, 203, 203); padding: 0.25em; text-align: left; background: rgb(239, 239, 239); }
+.pr_snippet_category .pr-snippet-wrapper { border-color: rgb(255, 255, 255); display: block; float: left; height: 16px; left: 26px; overflow: hidden; position: relative; top: 0px; width: 120px; background-color: rgb(255, 255, 255); }
+.pr-snippet-stars2 { border: 0px solid rgb(203, 203, 203); padding: 0.3em; float: left; margin-right: 0.3em; background: rgb(255, 255, 255); }
+.pr-stars { height: 1.25em; line-height: 1.25em; margin: 0px 0.25em 0px 0px; padding: 0px; position: relative; width: 7em; background-repeat: no-repeat; }
+.pr-stars-small { height: 16px; line-height: 16px; width: 83px; background-image: url(https://www.hookahcompany.com/images/stars_small.gif); }
+.pr-snippet-stars2 .pr-stars-small, .pr-modal-container .pr-stars { float: left; height: 30px; line-height: 30px; width: 83px; background-image: url(https://www.hookahcompany.com/images/stars_small.gif); }
+.pr-snippet-rating-decimal { float: left; margin-right: 0.3em; height: 15px; line-height: 15px; font-size: 85%; }
+.pr-rounded { border-radius: 0.2em; }
+.pr_snippet_category .pr-snippet-rating-decimal { display: inline; clear: right; }
+.pr-snippet-stars2 .pr-snippet-rating-decimal { float: left; margin-right: 0.3em; height: 30px; line-height: 15px; font-size: 85%; color: rgb(255, 255, 255); padding: 0px 0.2em; background-color: rgb(65, 65, 66); }
+.brief-listpriceblank { width: 174px; float: left; text-align: center; color: rgb(99, 99, 99); text-decoration: none; font-size: 11px; padding: 2px 0px; }
+.brief-sellprice { width: 174px; float: left; text-align: center; color: rgb(0, 107, 98); font-size: 14px; padding: 2px 0px; }
+.brief-prdgrp-option { width: 174px; height: 24px; float: left; text-align: center; padding: 12px 0px 2px; overflow: hidden; }
+.product_options_title { display: none; }
+.brief-prdgrp-option .option_name { display: none; }
+.brief-prdgrp-option .option_inputs select.option_input { position: relative; width: 150px; float: left; border: 1px solid rgb(162, 162, 162); left: 10px; letter-spacing: 0px; }
+span.skype_c2c_print_container { display: none !important; }
+.clear-both { font-size: 1px; }
+.skype_c2c_menu_container { position: absolute !important; z-index: 2147483647 !important; min-width: 200px !important; padding: 0px !important; border: 2px solid rgb(0, 175, 240) !important; font-family: 'Helvetica Neue Regular', Helvetica, Arial !important; font-size: 10pt !important; font-weight: normal !important; font-style: normal !important; line-height: 1.4em !important; direction: ltr !important; text-align: left !important; background-color: rgb(255, 255, 255) !important; }
+.skype_c2c_menu_click2call { background-image: url(chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/call_icon.png) !important; }
+.skype_c2c_menu_container div { position: relative !important; margin: 0px !important; padding: 12px 0px 7px !important; }
+div.skype_c2c_menu_click2call { padding-left: 25px !important; background-position: 11px 11px !important; background-repeat: no-repeat !important; }
+.skype_c2c_menu_container a, .skype_c2c_menu_container span { margin: 0px 13px !important; white-space: nowrap !important; border-style: none !important; letter-spacing: 0px !important; background-image: none !important; }
+.skype_c2c_menu_container div a { color: rgb(0, 175, 240) !important; text-decoration: none !important; }
+.skype_c2c_menu_click2sms { display: none; }
+div.skype_c2c_menu_toll_info { border-top-width: 1px !important; border-top-style: solid !important; border-top-color: rgb(0, 175, 240) !important; color: rgb(147, 149, 152) !important; }
+.skype_c2c_menu_toll_callcredit { display: block !important; }
+.skype_c2c_menu_toll_free { display: none !important; }
+.resp-menu-btn { float:left; width:16%; margin:12px 0 0 0;}
+.resp-triList-container { float:left; width:84%;}
+ul.resp-triList { margin:0; padding:0; list-style-type:none; font: bold 14px/1 Arial, Helvetica, sans-serif; color:#fff; text-transform:capitalize;}
+ul.resp-triList li { margin:0; padding:0; list-style-type:none; display:inline; width:25%; float:left; text-align:center;}
+ul.resp-triList li a:link,
+ul.resp-triList li a:visited{ text-decoration:none; color:#fff; display:block; padding:30px 0 0 0;}
+ul.resp-triList li a:hover { text-decoration:underline; color:#fff;}
+.resp-triList-container { display:none;}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
