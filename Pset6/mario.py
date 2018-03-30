@@ -5,9 +5,12 @@ if 0 > levels:
 elif levels > 24:
     print("Too tall! Less than 24, please.")
 
+
 else:
-     for i in range(levels, 0, -1):
-        print(" ")
-        for j in range(levels):
+    bricks = 1
+     for i in range((levels-bricks), 0, -1):
+        print(" "end="")
+        for j in range(bricks):
             print("#")
+            bricks +=
     
