@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <!--
+        I can see the weather in my current location.
+        I can push a button to toggle between Fahrenheit and Celsius.
+    -->
+    <title> Local Weather </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="thing.css">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="thing.js"></script>
+
+    
+</head>
+
+<body>
+        <h1>Weather Checker</h1>
+
+           <p>Show my weather</p>
+            <button id = "button1" onclick=geoFindMeC()>in Celsius ( C )</button>
+            <button id = "button2" onclick=geoFindMeF()>in Fahrenheit ( F )</button>
+
+
+            <div class="results">
+                <div id="icon">
+                </div>
+                <div id="temp">
+                </div>
+                <div id="main">
+                </div>
+                <div id="detail">
+                </div>
+                
+            </div>
+</body>
+
+</html>
