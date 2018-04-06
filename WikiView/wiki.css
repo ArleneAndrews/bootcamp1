@@ -2,41 +2,7 @@ html {
     background-color: whitesmoke;
 }
 
-.container-fluid {
-    position: centered;
-    background-color: white;
-    top: 10%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    width: 60%;
-    height: auto;
-    font-size: 140%;
-}
 
-#temp {
-    font-size: 200%;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 15px;
-}
-#main {
-    font-size: 125%;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 15px;
-}
-
-#desc {
-    font-style: italic;
-    text-align: right;
-    margin-right: 10px;
-}
-
-#icon {
-    margin-right: 10px;
-}
 #button1 , #button2 {
     display:inline-block;
     }
