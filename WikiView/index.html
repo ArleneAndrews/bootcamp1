@@ -4,25 +4,26 @@
         I can see the weather in my current location.
         I can push a button to toggle between Fahrenheit and Celsius.
     -->
-    <title> Local Weather </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <meta charset="utf-8">
     <!--remove for codepen-->
+    <title> Wiki Viewer </title>
     <script type="text/javascript" src="wiki.js"></script>
-    <link rel="stylesheet" type="text/css" href="thing.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" type="text/css" href="wiki.css">
+    <!--end remove-->
 
     
 </head>
 
 <body>
-        <h1>Weather Checker</h1>
+        <h1>Wiki Searcher</h1>
 
-           <p>Show my weather</p>
-            <button id = "button1" onclick=geoFindMeC()>in Celsius ( C )</button>
-            <button id = "button2" onclick=geoFindMeF()>in Fahrenheit ( F )</button>
+           
+            <div id = "searchWhat"> 
+                <p>{{ message }}</p>
+                <input v-model="message">
+            </div>
+            <button id = "button2" onclick=geoFindMeF()>Show me a random page</button>
 
 
             <div class="results">
