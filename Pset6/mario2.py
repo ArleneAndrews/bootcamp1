@@ -1,5 +1,5 @@
 levels = int(input("How many levels?"))
-if 0 > levels:
+if 1 > levels:
     print("I can't print that type yet!")
 
 elif levels > 24:
@@ -14,14 +14,6 @@ else:
         line -= step
         print(line)
     # for brick in range(levels):
-    #    step += ' ' -=1
-    #    brick += '#'+=1
-    #    line = step + brick
+    #    currentRowAsString += "#"
     #     print (line)
-        
-        #"""  for space in range(numberOfSpacesForCurrentRow):
-        #    currentRowAsString += " "
-        #for brick in range(numberOfBricksForCurrentRow):
-        #    currentRowAsString += "#"
-#
-        #print(currentRowAsString) """
+    
