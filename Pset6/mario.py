@@ -6,7 +6,9 @@ elif levels > 24:
     print("Too tall! Less than 24, please.")
 
 else:
-    for i in range((levels - i), 0, -1):
+# This should print spaces, on less each iteration
+    for i in range((levels), 0, -1):
         print(" ", end="")
+        #This should print the rest of the line in hashes
         for j in range(i):
-            print("#")
+            print("#", end="")
