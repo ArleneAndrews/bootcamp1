@@ -4,13 +4,13 @@
         I can see the weather in my current location.
         I can push a button to toggle between Fahrenheit and Celsius.
     -->
-    <title> Wiki Viewer </title>
     <meta charset="utf-8">
     <!--remove for codepen-->
+    <title> Wiki Viewer </title>
     <script type="text/javascript" src="wiki.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" type="text/css" href="wiki.css">
-
+    <!--end remove-->
 
     
 </head>
@@ -18,8 +18,11 @@
 <body>
         <h1>Wiki Searcher</h1>
 
-           <p>Show my weather</p>
-            <div id = "searchWhat" onclick=geoFindMeC()>Search</button>
+           
+            <div id = "searchWhat"> 
+                <p>{{ message }}</p>
+                <input v-model="message">
+            </div>
             <button id = "button2" onclick=geoFindMeF()>Show me a random page</button>
 
 

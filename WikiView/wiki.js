@@ -1,6 +1,6 @@
-var inputsearch = new Vue({
-  el: 'searchWhat',
+var searchWhat = new Vue({
+  el: '#searchWhat',
   data: {
-    message: 'Search for !'
+    message: 'Search for'
   }
 })
