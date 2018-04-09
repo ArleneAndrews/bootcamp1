@@ -1,0 +1,15 @@
+html {
+  background-color: black;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #333333;
+  line-height: 1.6em;
+}
+
+h1 {
+  font-family: cursive;
+}
