@@ -1,4 +1,7 @@
 //Making a parent to share state between components
+import React from "react";
+import ReactDOM from "react-dom";
+
 class HelloUser extends React.Component {
   constructor(props) {
     super(props);
