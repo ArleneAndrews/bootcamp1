@@ -10,6 +10,7 @@
 
 <body>
   <div id='app'></div>
+  
   <script type = "text/babel">
    
 function NameComponent(props) {const USER_DATA = {
@@ -22,7 +23,7 @@ function NameComponent(props) {const USER_DATA = {
   return (
     <div>
       <img src={''} />
-      <h1>Name: </h1>
+      <h1>Name: { user.name }</h1>
       <h3>username: </h3>
     </div>
   ) 
@@ -32,18 +33,7 @@ ReactDOM.render(
   <Badge user={USER_DATA}/>,
   document.getElementById('app')
 );
-
-/*     const Badge = React.createElement(
-        'div',
-        { id :'container'},
-        React.createElement(ImageComponent, { imagesource}),
-        React.createElement(NameComponent, { name }), 
-        React.createElement(UserComponent, { user }),
-    )
-
-  ReactDOM.render(
-   Badge, document.getElementById('app') ); */
-  </script>
+</script>
 </body>
 
 </html>
