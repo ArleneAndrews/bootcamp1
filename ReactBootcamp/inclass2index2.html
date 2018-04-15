@@ -15,7 +15,7 @@
         return (
             <ul>
                 {props.list.map((name) =>(
-                <li>
+                <li key={name}>
                 {name}
                 </li>
             ))}
