@@ -1,10 +1,11 @@
 # need loop for each?
 message = (input("Please add your message here. "))
-# need check for string here
-
+    
 key = int(input("Choose a numerical key. "))
 #need check for numerals
-
+if type(key) is not int:
+    print("This fails.")
+    break
 #keymapping
 
 #change to all uppercase
