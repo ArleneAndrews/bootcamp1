@@ -4,14 +4,49 @@ html {
 }
 body {
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
   font-size: 12px;
-  color: #333333;
   line-height: 1.6em;
 }
 
 h1 {
+  font-size: 200%;
   font-family: cursive;
 }
 
-
+#navblock {
+  display: inline;
+  margin-inline-end: 60px;
+  box-sizing: content-box;
+  font-family: sans-serif;
+}
+#nav {
+	width: 100%;
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+	background-color:  darkorange;
+  
+}
+#nav ul {
+	list-style: none;
+	width: 800px;
+	margin: 0 auto;
+  padding: 0; 
+}
+#nav li {
+  float: left; 
+}
+#nav li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+  border-right: 1px solid #000; 
+}
+#nav li:first-child a {
+	border-left: 1px solid #000; }
+#nav li a:hover {
+	color: #c00;
+	background-color: #fff; }
