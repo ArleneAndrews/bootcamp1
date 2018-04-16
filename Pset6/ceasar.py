@@ -6,6 +6,9 @@ key = int(input("Choose a numerical key. "))
 if type(key) is not int:
     print("This fails.")
     break
+
+#Insure key is less than 26
+
 #keymapping
 
 #change to all uppercase
