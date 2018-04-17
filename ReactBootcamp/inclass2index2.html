@@ -16,19 +16,40 @@
             <ul>
                 {props.list.map((name) =>(
                 <li key={name}>
-                {name}
+                <span>{name}</span>
+                <button onClick = {() => props.onRemoveFriend(name)}>Remove</button>
                 </li>
             ))}
             </ul>
         )
     }
-     function App () {
-         const friends = ['JR', 'Sammi', 'Tom']
-      return (
-        <div>
-          <FriendsList list = {friends} />
-        </div>
-      )
+    class App extends React.Component {
+        constructor(props){
+            super(props)
+
+            this.state = {
+                friends: ['JR', 'Sammi', 'Tom', "BooBoo"]
+            }
+        }
+        handleAddFriend(){
+
+        }
+        handleRemoveFriend(name){
+            this.setState((currentState) => {
+                return {
+                    friends: currentState.friends.filter((friend) => friend !== name)
+                }
+            })
+        }
+        render(){
+            return (
+                <div>
+                    <FriendsList 
+                    list = {this.state.friends}
+                    onRemoveFriend = {this.handleRemoveFriend} />
+                </div>
+            )
+        }
     }
     ReactDOM.render(
       <App />,
