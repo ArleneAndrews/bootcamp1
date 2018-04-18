@@ -1,62 +1,83 @@
-<!DOCTYPE HTML >
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>FriendList App</title>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src ='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
+  <title>First React App</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
 </head>
-
 <body>
-        <div id='app'></div>
-    <script type = 'text/babel'>
+  <div id='app'></div>
+
+  <script type='text/babel'>
     function FriendsList (props) {
-        return (
-            <ul>
-                {props.list.map((name) =>(
-                <li key={name}>
-                <span>{name}</span>
-                <button onClick = {() => props.onRemoveFriend(name)}>Remove</button>
-                </li>
-            ))}
-            </ul>
-        )
+      return (
+        <ul>
+          {props.list.map((name) => (
+            <li key={name}>
+              <span>{name}</span>
+              <button onClick={() => props.onRemoveFriend(name)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      )
     }
     class App extends React.Component {
-        constructor(props){
-            super(props)
-
-            this.state = {
-                friends: ['JR', 'Sammi', 'Tom', "BooBoo"]
-            }
+      constructor(props) {
+        super(props)
+        this.state = {
+          friends: ['Jordyn', 'Mikenzi', 'Jake'],
+          input: '',
         }
-        handleAddFriend(){
-
-        }
-        handleRemoveFriend(name){
-            this.setState((currentState) => {
-                return {
-                    friends: currentState.friends.filter((friend) => friend !== name)
-                }
-            })
-        }
-        render(){
-            return (
-                <div>
-                    <FriendsList 
-                    list = {this.state.friends}
-                    onRemoveFriend = {this.handleRemoveFriend} />
-                </div>
-            )
-        }
+        this.handleRemoveFriend = this.handleRemoveFriend.bind(this)
+        this.updateInput = this.updateInput.bind(this)
+        this.handleAddFriend = this.handleAddFriend.bind(this)
+      }
+      handleAddFriend() {
+        this.setState((currentState) => {
+          return {
+            friends: currentState.friends.concat([currentState.input]),
+            input: ''
+          }
+        })
+      }
+      handleRemoveFriend(name) {
+        this.setState((currentState) => {
+          return {
+            friends: currentState.friends.filter((friend) => friend !== name)
+          }
+        })
+      }
+      updateInput(e) {
+        const value = e.target.value
+        this.setState({
+          input: value
+        })
+      }
+      render() {
+        return (
+          <div>
+            <input
+              type='text'
+              placeholder='New friend'
+              value={this.state.input}
+              onChange={this.updateInput}
+            />
+            <button onClick={this.handleAddFriend}>
+              Add
+            </button>
+            <FriendsList
+              list={this.state.friends}
+              onRemoveFriend={this.handleRemoveFriend}
+            />
+          </div>
+        )
+      }
     }
     ReactDOM.render(
       <App />,
       document.getElementById('app')
     )
-    </script>
-
+  </script>
 </body>
-
 </html>
