@@ -22,9 +22,35 @@
         
     <div class="panels">
         <div class="panel panel1">
-            <p>Hey</p>
-            <p>Let's</p>
-            <p>Dance</p>
+            <div class="w3-content w3-display-container">
+                    <img class="mySlides" src="http://www.fashionfist.com/wp-content/uploads/2014/09/Hairstyles-for-Men-With-Short-Hair-Trendy-Look-2015-Fashion-Fist-1.jpg" width = 30%>
+                    <img class="mySlides" src="https://i.pinimg.com/564x/c7/ca/d2/c7cad28640325f6716502764c1d9b5a6.jpg" width = 30%>
+                    <img class="mySlides" src="https://www.metroeve.com/wp-content/uploads/2017/04/Girly-Hairstyles-Long-Hair-Stylish-Little-Girl-Hairstyles.jpg" width = 30%>
+                    <img class="mySlides" src="http://4.bp.blogspot.com/-YYPbm5EUDn8/TilHemwJUfI/AAAAAAAADdI/chRxBuC1VrA/s1600/Best-Short-Hairstyles-2011-1.jpg" width = 30% >
+                    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                    <script>
+                    var slideIndex = 1;
+                            showDivs(slideIndex);
+                            
+                            function plusDivs(n) {
+                                showDivs(slideIndex += n);
+                            }
+                            
+                            function showDivs(n) {
+                                var i;
+                                var x = document.getElementsByClassName("mySlides");
+                                if (n > x.length) {slideIndex = 1} 
+                                if (n < 1) {slideIndex = x.length} ;
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none"; 
+                                }
+                                x[slideIndex-1].style.display = "block"; 
+                            }
+                            </script>
+                    </div>
+            <p>Appointments Spot</p>
+            
         </div>
         <div class="panel panel2">
                 <div id="navblock">
@@ -34,7 +60,7 @@
                                     <a href="index2.html" id="navbutton-main" alt="home">Home</a>
                                 </li>
                                 <li>
-                                    <a href="appt.html" id="navbutton" alt="Appointments">Make an Appointment</a</li>
+                                    <a href="appt.html" id="navbutton" alt="Appointments">Make an Appointment</a></li>
                                         <li>
                                             <a href="gallery.html" id="navbutton" alt="Pictures">Gallery</a>
                                         </li>
@@ -59,6 +85,8 @@
                     <img src="http://res.cloudinary.com/kara/image/upload/c_scale,w_600/v1523890431/IMG_20180416_085257_u9rnbg.jpg" width=60></img>
                     </div>
             <p>Experience It Today</p>
+            <p>Specials Spot</p>
+            <p>Map/contact spot</p>
         </div>
 
     </div>
