@@ -10,48 +10,94 @@
 </head>
 
 <body>
-    <div id="navblock">
-        <div id="nav">
-            <ul>
-                <li>
-                    <a href="index2.html" id="navbutton-main" alt="home">Home</a>
-                </li>
-                <li>
-                    <a href="appt.html" id="navbutton" alt="Appointments">Make an Appointment</a</li>
-                        <li>
-                            <a href="gallery.html" id="navbutton" alt="Pictures">Gallery</a>
-                        </li>
-                        <li>
-                            <a href="products.html" id="navbutton" alt="Products">Products</a>
-                    </a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
 
-    <img src="http://res.cloudinary.com/kara/image/upload/c_scale,w_600/v1523890431/IMG_20180416_085257_u9rnbg.jpg" width=6 0></img>
+    
 
 
 
     <p></p>
-    <div>
-        <p>
-            <h1>The Chop Shop Salon</h1>
-        </p>
-    </div>
+    
+           
+        
     <div class="panels">
         <div class="panel panel1">
-            <p>Hey</p>
-            <p>Let's</p>
-            <p>Dance</p>
+            <div class="w3-content w3-display-container">
+                    <img class="mySlides" src="http://www.fashionfist.com/wp-content/uploads/2014/09/Hairstyles-for-Men-With-Short-Hair-Trendy-Look-2015-Fashion-Fist-1.jpg" width = 30%>
+                    <img class="mySlides" src="https://i.pinimg.com/564x/c7/ca/d2/c7cad28640325f6716502764c1d9b5a6.jpg" width = 30%>
+                    <img class="mySlides" src="https://www.metroeve.com/wp-content/uploads/2017/04/Girly-Hairstyles-Long-Hair-Stylish-Little-Girl-Hairstyles.jpg" width = 30%>
+                    <img class="mySlides" src="http://4.bp.blogspot.com/-YYPbm5EUDn8/TilHemwJUfI/AAAAAAAADdI/chRxBuC1VrA/s1600/Best-Short-Hairstyles-2011-1.jpg" width = 30% >
+                    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                    <script>
+                    var slideIndex = 1;
+                            showDivs(slideIndex);
+                            
+                            function plusDivs(n) {
+                                showDivs(slideIndex += n);
+                            }
+                            
+                            function showDivs(n) {
+                                var i;
+                                var x = document.getElementsByClassName("mySlides");
+                                if (n > x.length) {slideIndex = 1} 
+                                if (n < 1) {slideIndex = x.length} ;
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none"; 
+                                }
+                                x[slideIndex-1].style.display = "block"; 
+                            }
+                            </script>
+                    </div>
+                    <hr>
+            <p>Appointments Spot</p>
+            <img src ="https://png.icons8.com/color/1600/google-calendar.png" width = 60px></img>
+            <!-- - look at https://support.google.com/calendar/answer/190998?hl=en
+             -->
         </div>
-        <div class="panel panel2" >
-                <iframe src ="lorum.txt"></iframe>
-           </div>
+        <div class="panel panel2">
+                <div id="navblock">
+                        <div id="nav" >
+                            <ul>
+                                <li>
+                                    <a href="index2.html" id="navbutton-main" alt="home">Home</a>
+                                </li>
+                                <li>
+                                    <a href="appt.html" id="navbutton" alt="Appointments">Make an Appointment</a></li>
+                                        <li>
+                                            <a href="gallery.html" id="navbutton" alt="Pictures">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="products.html" id="navbutton" alt="Products">Products</a>
+                                    </a>
+                                    </li>
+                            </ul>
+                        </div>
+
+                    </div><div>
+        <p>
+                    <h1>The Chop Shop Salon</h1></p>
+    </div>
+                <p>Nullam tincidunt diam vel enim venenatis ultrices. Fusce vestibulum dolor magna, quis fermentum purus sagittis quis. In rutrum ultrices lobortis. Sed elementum augue felis, euismod tempor neque feugiat vitae. Nunc ornare felis vitae arcu sodales mollis. Ut semper vehicula ipsum vitae condimentum. Donec luctus felis sit amet arcu tristique faucibus. Ut vitae odio mattis, consequat odio nec, faucibus mauris. Nullam commodo est vitae lectus dictum ultrices. Nullam bibendum pharetra eleifend. Sed quis erat elit. Cras pretium augue purus, non pellentesque arcu interdum at. Praesent iaculis eu mauris sodales lacinia. Morbi scelerisque tempus est nec egestas. Vestibulum vitae tincidunt nisl.</p>
+
+                <p>Donec orci quam, lacinia vel sagittis id, fermentum sollicitudin lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tempor a neque a blandit. Ut magna purus, tempus vitae tortor at, sollicitudin bibendum ligula. Donec eu ex fringilla, tincidunt ligula ac, sodales urna. Etiam porta sapien eget ligula mollis interdum. Nullam at ipsum eu dui ultricies ullamcorper. In pretium aliquet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer elit enim, efficitur quis magna vel, fermentum luctus dolor.</p>
+                
+        </div>
         <div class="panel panel3">
-            <p>Experience</p>
-            <p>It</p>
-            <p>Today</p>
+                <div>
+                    <img src="http://res.cloudinary.com/kara/image/upload/c_scale,w_600/v1523890431/IMG_20180416_085257_u9rnbg.jpg" width=60></img>
+                    </div>
+            <p>Experience It Today</p>
+            <hr>
+            <p>Specials Spot</p>
+            <br>Wash and trim $.50 off today only!<br>
+            <hr>
+            <p>Contact Rosie Roberts for more information</p>
+            307 421-7149<br>
+            Facebook: <br>
+            909 Campbell Avenue<br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.0145067605076!2d-104.79448654887901!3d41.134209279186635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3b2407ed23d1%3A0xcac0c700580b9f09!2s909+Campbell+Ave%2C+Cheyenne%2C+WY+82001!5e0!3m2!1sen!2sus!4v1524160467697" width="120" height="90" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div></div>
         </div>
 
     </div>
