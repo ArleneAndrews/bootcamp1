@@ -20,7 +20,8 @@ h1 {
 
 hr{
   border-top: 1px solid black;
-  height: 2px;
+  height: 1px;
+  border-bottom: none;
 }
 
 #logo {
@@ -49,6 +50,7 @@ hr{
 }
 #nav li {
   float: left;
+  
 }
 #nav li a {
   display: block;
@@ -57,6 +59,7 @@ hr{
   font-weight: bold;
   color: #000;
   border-right: 1px solid #000;
+  margin: 0 auto;
 }
 #nav li:first-child a {
   border-left: 1px solid #000;
@@ -86,6 +89,7 @@ hr{
   justify-content: center;
   display: flex;
   flex-direction: column;
+  padding: 8px 15px;
 }
 .panel1 {
   background-color: #cf9900;
