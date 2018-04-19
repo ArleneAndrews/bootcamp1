@@ -72,8 +72,7 @@ h1 {
   display: flex;
 }
 .panel {
-  text-align: center;
-  align-items: center;
+ align-items: center;
   /* Safari transitionend event.propertyName === flex */
   /* Chrome + FF transitionend event.propertyName === flex-grow */
   font-size: 20px;
@@ -84,13 +83,17 @@ h1 {
 }
 .panel1 {
   background-color: #cf9900;
+  justify-content: center;
 }
 .panel2 {
   background-color: #cf9900;
+  justify-content: left;
+  line-height: 1.25em;
 ;
 }
 .panel3 {
   background-color: #cf9900;
+  justify-content: center;
 }
 
 /* Flex Items */
@@ -99,7 +102,6 @@ h1 {
   width: 100%;
   flex: 1 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
