@@ -12,20 +12,29 @@
 
   <script type='text/babel'>
     function FriendsList (props) {
-        <h2>Active Friends</h2>
       return (
         <ul>
           {props.list.map((name) => (
             <li key={name}>
               <span>{name}</span>
               <button onClick={() => props.onRemoveFriend(name)}>Remove</button>
-
-            
-            </li>
-            <h2>On the Outs</h2>
-            <button onClick ={() = > props.list.map((name) => friend !== '')}>Clear All</button>
+              <button onClick={() => props.onNonamehere(name)}>Inactive</button>
+            </li>           
           ))}
         </ul>
+      )
+    }
+    function NoFriendsList (props) {
+      return(
+        <ul>
+          {props.list.map((name) => (
+            <li key={name}>
+              <span>{name}</span>
+              <button onClick={() => props.onRemoveFriend(name)}>Remove</button>
+              <button onClick={() => props.onNonamehereagain(name)}>Active</button>
+            </li>
+      ))}
+      </ul>
       )
     }
     class App extends React.Component {
@@ -33,13 +42,15 @@
         super(props)
         this.state = {
           friends: ['Jordyn', 'Mikenzi', 'Jake'],
+          unfriend: [],
           input: '',
         }
         this.handleRemoveFriend = this.handleRemoveFriend.bind(this)
         this.updateInput = this.updateInput.bind(this)
         this.handleAddFriend = this.handleAddFriend.bind(this)
-        this.handleInactive = this.handleinactive.bind(this)
-        this.handleActive = this.handleActive.bind(this)
+       { /* this.handleInactive = this.handleinactive.bind(this)
+        this.handleActive = this.handleActive.bind(this) */
+       }
       }
       handleAddFriend() {
         this.setState((currentState) => {
@@ -72,17 +83,34 @@
               value={this.state.input}
               onChange={this.updateInput}
             />
-            <button onClick={this.handleAddFriend}>
-              Add
-            </button>
+            <button onClick={this.handleAddFriend}>Add</button>
+            <h2>Active Friends</h2>
             <FriendsList
               list={this.state.friends}
               onRemoveFriend={this.handleRemoveFriend}
             />
+            <h2>On The Outs</h2>
+           {/*  <NoFriendsList
+              list={this.state.unfriends}
+              onRemoveFriend={this.handleRemoveFriend}
+            /> */
+             /* <button onClick ={() = > props.list.map((name) => friend === '')}>Clear All</button> */
+           }
           </div>
         )
       }
     }
+
+  { /*  //new code starts here
+    handleRemoveFriend(name) {
+        this.setState((currentState) => {
+          return {
+            friends: currentState.friends.filter((friend) => friend !== name)
+          }
+        })
+      }
+      //new code ends here */
+  }
     ReactDOM.render(
       <App />,
       document.getElementById('app')
