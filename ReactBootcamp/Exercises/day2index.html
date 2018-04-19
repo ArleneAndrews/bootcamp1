@@ -7,17 +7,23 @@
   <script src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
 </head>
 <body>
+    
   <div id='app'></div>
 
   <script type='text/babel'>
     function FriendsList (props) {
+        <h2>Active Friends</h2>
       return (
         <ul>
           {props.list.map((name) => (
             <li key={name}>
               <span>{name}</span>
               <button onClick={() => props.onRemoveFriend(name)}>Remove</button>
+
+            
             </li>
+            <h2>On the Outs</h2>
+            <button onClick ={() = > props.list.map((name) => friend !== '')}>Clear All</button>
           ))}
         </ul>
       )
@@ -41,6 +47,7 @@
           }
         })
       }
+      
       handleRemoveFriend(name) {
         this.setState((currentState) => {
           return {
