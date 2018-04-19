@@ -17,6 +17,12 @@ h1 {
   font-family: cursive;
   text-align: center;
 }
+
+hr{
+  border-top: 1px solid black;
+  height: 2px;
+}
+
 #logo {
   width: 60px;
   float: right;
