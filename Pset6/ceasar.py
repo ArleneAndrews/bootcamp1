@@ -12,6 +12,7 @@ if key > 26:
 def toCesaer(incoming):
     ceasar = ''
     for letter in incoming:
+        letter = letter.upper()
         if 'A' <= letter <= 'Z':
             location = ord(letter)
             new_ascii = location + key
