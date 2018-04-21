@@ -2,10 +2,8 @@
 message = (input("Please add your message here. "))
     
 key = int(input("Choose a numerical key. "))
-#need check for numerals
-if type(key) is not int:
-    print("This fails.")
-    break
+
+print("This works.")
 
 #Insure key is less than 26
 
