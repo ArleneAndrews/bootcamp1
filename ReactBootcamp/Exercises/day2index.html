@@ -42,7 +42,7 @@
         super(props)
         this.state = {
           friends: ['Jordyn', 'Mikenzi', 'Jake'],
-          unfriend: [],
+          unfriend: ['Viktyr'],
           input: '',
         }
         this.handleRemoveFriend = this.handleRemoveFriend.bind(this)
@@ -90,15 +90,14 @@
               onRemoveFriend={this.handleRemoveFriend}
             />
             <h2>On The Outs</h2>
-           {/*  <NoFriendsList
+           <NoFriendsList
               list={this.state.unfriends}
               onRemoveFriend={this.handleRemoveFriend}
-            /> */
-             /* <button onClick ={() = > props.list.map((name) => friend === '')}>Clear All</button> */
-           }
+            />
+             { /*  <button onClick ={() = > props.list.map((name) => friend === '')}>Clear All</button> */ }          }
           </div>
         )
-      }
+      
     }
 
   { /*  //new code starts here
