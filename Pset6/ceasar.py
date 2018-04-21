@@ -16,6 +16,8 @@ def toCesaer(incoming):
         if 'A' <= letter <= 'Z':
             location = ord(letter)
             new_ascii = location + key
+            if  ord('Z') < new_ascii:
+                new_ascii = int(new_ascii - ord ('A'))
             character = chr(new_ascii)
         ceasar = ceasar + character
     return ceasar
