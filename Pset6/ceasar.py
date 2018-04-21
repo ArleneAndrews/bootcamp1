@@ -6,6 +6,10 @@ key = int(input("Choose a numerical key. "))
 print("This works.")
 
 #Insure key is less than 26
+if key > 26:
+    key = key % 26
+
+print(key)
 
 #keymapping
 
