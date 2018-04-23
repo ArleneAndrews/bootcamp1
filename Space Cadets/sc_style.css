@@ -1,55 +1,211 @@
-body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; /*background: url(https://www.facebook.com/spacecadetsglass/photos/a.799502053547277.1073741827.799501330214016/834239586740190/?type=3);*/ line-height: 1.6em; }
-.lhnInviteContainer { z-index: 10000000; width: 278px; display: none; line-height: 22px; position: fixed; top: 150px; padding: 15px; border-radius: 8px; border: 1px solid rgb(255, 255, 255); box-shadow: rgb(204, 204, 204) 3px 3px 7px; font-size: 16px; text-align: center; font-family: Tahoma, sans-serif; color: rgb(255, 255, 255); background-color: rgb(156, 0, 0); }
-.lhnInviteContainer .LHNInviteTitle { color: rgb(255, 255, 255); margin-bottom: 5px; font-size: 18px; width: 100%; }
-.lhnInviteContainer .LHNInviteMessage { margin-bottom: 8px; padding-bottom: 12px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); width: 100%; }
-.LHNInviteButtons { width: 100%; }
-a { text-decoration: none; }
-a:link { color: rgb(0, 0, 0); }
-a:visited { color: rgb(0, 0, 0); text-decoration: none; }
-.lhnInviteContainer .LHNInviteCloseButton { color: rgb(0, 0, 0); position: absolute; top: -12px; right: -12px; height: 24px; width: 24px; font-size: 20px; text-decoration: none; border-radius: 12px; line-height: 20px; background-color: rgb(255, 255, 255); }
-.lhnInviteContainer .LHNInviteAcceptButton { font-size: 18px; color: rgb(0, 0, 0); text-decoration: none; display: inline-block; padding: 5px 20px 7px; background-color: rgb(255, 255, 255); }
-.fb_reset { border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; background: none; }
-.fb_reset > div { overflow: hidden; }
-#main-container1 { width: 100%; min-height: 200px; background-image: url(https://www.hookahcompany.com/images_templ/hc/tob-bar-bg.png); background-repeat: repeat-x; }
-#main-container2 { width: 980px; margin: auto; }
-#header-box { float: left; width: 980px; }
-#top-bar { float: left; height: 32px; padding: 8px 0px 0px; width: 996px; }
-#tag-line { float: left; }
-img { border: none; }
-#top-links { float: left; padding: 0px 0px 0px 84px; width: 610px; }
-ul, li, h1, h2, h3, form, table, td, tr, input { margin: 0px; padding: 0px; list-style: none; }
-#top-links li { float: left; background: url(https://www.hookahcompany.com/images_templ/hc/top-link-divider.png) 100% 50% no-repeat; }
-#top-links li a { color: rgb(255, 255, 255); margin: 0px 18px; padding: 0px 6px 0px 0px; display: block; font-family: Arial; }
-#top-links li.top-link-last { float: right; display: block; width: 94px; text-align: left; background: url(https://www.hookahcompany.com/images_templ/hc/new-hc-cart.png) 0% 0% no-repeat; }
-#top-links li.top-link-last a { margin: 0px; padding-left: 24px; }
-#logo-box { float: left; padding: 0px 0px 10px 15px; }
-#search-box { float: left; margin: 18px 45px 0px 47px; width: 358px; height: 46px; background: url(https://www.hookahcompany.com/images_templ/hc/search-bg.png) no-repeat; }
-input, form { padding: 0px; margin: 0px; display: inline; }
-#search-box #searchQueryInputField { width: 310px; height: 22px; float: left; border: none; position: relative; top: 14px; left: 14px; font-size: 14px; margin-right: 10px; line-height: 16px; font-style: italic; outline: none; background: transparent; }
-#search-box #searchSubmitBtn { width: 22px; height: 22px; float: left; position: relative; top: 12px; }
-#contact-info { float: left; padding: 8px 0px 0px; width: 300px; margin-top: 8px; }
-#contact-info div { position: relative; float: left; left: 4px; top: 3px; border: 0px; }
-.left { float: left; }
-#top-nav { float: left; width: 994px; height: 33px; border-bottom-color: rgb(255, 143, 0); border-bottom-width: 3px; border-bottom-style: none; padding-bottom: 17px; }
-#top-nav-linkbox { width: 882px; float: left; }
-#top-nav-linkbox, #social-links { border-bottom-color: rgb(255, 143, 0); border-bottom-width: 3px; border-bottom-style: solid; }
-#top-nav-linkbox li { float: left; width: 147px; text-align: center; display: block; height: 33px; line-height: 33px; background: url(https://www.hookahcompany.com/images_templ/hc/top-nav-divider.png) 100% 50% no-repeat; }
-#top-nav-linkbox li a { width: 145px; margin: 0px 2px 0px 0px; font-size: 14px; color: rgb(255, 255, 255); display: block; height: 33px; line-height: 33px; background: url(https://www.hookahcompany.com/images_templ/hc/hnav_sprite.png) 0px -33px repeat-x; }
-#social-links { float: left; width: 94px; padding: 6px 0px 0px 3px; height: 27px; background: url(https://www.hookahcompany.com/images_templ/hc/hnav_sprite.png) 0px -33px repeat-x; }
-#social-links img { margin: 0px 3px 0px 2px; }
-#main-middle-area { float: left; width: 980px; padding: 17px 0px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 17px; }
-#left-side-wrapper { float: left; width: 178px; overflow: hidden; margin-right: 14px; }
-#left-side-box { float: left; width: 148px; margin: 0px; padding: 14px 14px 10px 16px; position: relative; background: url(https://www.hookahcompany.com/images_templ/hc/blank.png); }
-#custom-links { float: left; position: relative; width: 148px; margin-bottom: 10px; }
-#custom-links-header { float: left; width: 148px; font-size: 12px; font-weight: bold; color: rgb(255, 143, 0); height: 20px; line-height: 20px; }
-#custom-links ul { margin: 0px; padding: 0px; width: 148px; }
-#custom-links li { margin: 0px; padding: 0px 0px 0px 12px; list-style: none; line-height: 18px; float: left; display: block; background: url(https://www.hookahcompany.com/images_templ/hc/bullet-leftmenu.png) 4px 5px no-repeat; }
-#custom-links a { color: rgb(255, 255, 255); text-decoration: none; }
-#menu_categorytypes { width: 148px; float: left; display: block; margin: 0px; padding: 0px; }
-#menu_categorytypes li { padding: 0px; width: 148px; line-height: 18px; float: left; }
-#menu_categorytypes li.class_menuitem_categorytype { float: left; width: 148px; line-height: 18px; border-top-width: 1px; border-top-style: dotted; border-top-color: rgb(215, 215, 215); padding-top: 10px; }
-#menu_categorytypes span.categorytype-name { font-size: 12px; font-weight: bold; color: rgb(255, 143, 0); height: 18px; line-height: 18px; margin: 0px; padding: 0px; }
-.menu_categorytype { margin: 0px; padding: 0px; float: left; display: inline-block; clear: both; }
+body { margin: 0px;
+       padding: 0px; 
+       font-family: Arial, Helvetica, sans-serif; 
+       font-size: 12px; 
+       color: #333333;
+       line-height: 1.6em; 
+    }
+#main-container1 { 
+    width: 100%; 
+    min-height: 200px;  
+}
+#main-container2 { 
+    width: 980px; 
+    margin: auto; }
+#header-box { 
+    float: left; 
+    width: 980px; 
+}
+#top-bar { 
+    float: left; 
+    height: 32px; 
+    padding: 8px 0px 0px; 
+    width: 996px; 
+}
+
+#top-links { 
+    float: left; 
+    padding: 0px 0px 0px 84px; 
+    width: 610px; 
+}
+ul, li, h1, h2, h3, form, table, td, tr, input {
+     margin: 0px; 
+     padding: 0px; 
+     list-style: none; 
+}
+#top-links li { 
+    float: left; 
+}
+#top-links li a { 
+    color: rgb(255, 255, 255); 
+    margin: 0px 18px; 
+    padding: 0px 6px 0px 0px; 
+    display: block; 
+    font-family: Arial; 
+}
+#top-links li.top-link-last { 
+    float: right; 
+    display: block; 
+    width: 94px; 
+    text-align: left; 
+}
+#top-links li.top-link-last a { 
+    margin: 0px; 
+    padding-left: 24px; }
+#logo-box { 
+    float: left; 
+    padding: 0px 0px 10px 15px; 
+}
+#contact-info { 
+    float: left; 
+    padding: 8px 0px 0px; 
+    width: 300px; 
+    margin-top: 8px; 
+}
+#contact-info div { 
+    position: relative; 
+    float: left; 
+    left: 4px; 
+    top: 3px; 
+    border: 0px; 
+}
+.left { 
+    float: left; 
+}
+#top-nav { 
+    float: left; 
+    width: 994px; 
+    height: 33px; 
+    border-bottom-color: rgb(255, 143, 0); 
+    border-bottom-width: 3px; 
+    border-bottom-style: none; 
+    padding-bottom: 17px; 
+}
+#top-nav-linkbox { 
+    width: 882px; 
+    float: left; 
+}
+#top-nav-linkbox, #social-links { 
+    border-bottom-color: rgb(255, 143, 0); 
+    border-bottom-width: 3px; 
+    border-bottom-style: solid; 
+}
+#top-nav-linkbox li { 
+    float: left; 
+    width: 147px; 
+    text-align: center; 
+    display: block; 
+    height: 33px; 
+    line-height: 33px; 
+}
+#top-nav-linkbox li a { 
+    width: 145px; 
+    margin: 0px 2px 0px 0px; 
+    font-size: 14px; 
+    color: rgb(255, 255, 255); 
+    display: block; 
+    height: 33px; 
+    line-height: 33px; 
+}
+#social-links { 
+    float: left; 
+    width: 94px; 
+    padding: 6px 0px 0px 3px; 
+    height: 27px; 
+}
+#social-links img { 
+    margin: 0px 3px 0px 2px; 
+}
+#main-middle-area { 
+    float: left; 
+    width: 60%; 
+    padding: 17px 0px; 
+    padding-top: 0px; 
+    padding-bottom: 0px; 
+    margin-bottom: 17px; 
+}
+#left-side-wrapper { 
+    float: left; 
+    width: 20%; 
+    overflow: hidden; 
+    margin-right: 14px; 
+}
+#left-side-box { 
+    float: left; 
+    width: 148px; 
+    margin: 0px; 
+    padding: 14px 14px 10px 16px; 
+    position: relative; 
+}
+#custom-links { 
+    float: left; 
+    position: relative; 
+    width: 148px; 
+    margin-bottom: 10px; 
+}
+#custom-links-header { 
+    float: left; 
+    width: 148px; 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: rgb(255, 143, 0); 
+    height: 20px; 
+    line-height: 20px; 
+}
+#custom-links ul { 
+    margin: 0px; 
+    padding: 0px; 
+    width: 148px; 
+}
+#custom-links li { 
+    margin: 0px; 
+    padding: 0px 0px 0px 12px; 
+    list-style: none; 
+    line-height: 18px; 
+    float: left; 
+    display: block; 
+}
+#custom-links a { 
+    color: rgb(255, 255, 255); 
+    text-decoration: none; 
+}
+#menu_categorytypes { 
+    width: 148px; 
+    float: left; 
+    display: block; 
+    margin: 0px; 
+    padding: 0px;
+}
+#menu_categorytypes li {
+     padding: 0px; 
+     width: 148px; 
+     line-height: 18px; 
+     float: left; 
+    }
+#menu_categorytypes li.class_menuitem_categorytype { 
+    float: left; 
+    width: 148px; 
+    line-height: 18px; 
+    border-top-width: 1px; 
+    border-top-style: dotted; 
+    border-top-color: rgb(215, 215, 215); 
+    padding-top: 10px; 
+}
+#menu_categorytypes span.categorytype-name { 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: rgb(255, 143, 0); 
+    height: 18px; 
+    line-height: 18px; 
+    margin: 0px; 
+    padding: 0px; 
+}
+.menu_categorytype { 
+    margin: 0px; 
+    padding: 0px; 
+    float: left; 
+    clear: both; 
+}
 #menu_categorytypes li ul { margin: 0px; float: left; }
 #menu_categorytypes ul.menu_categorytype { padding-bottom: 10px; }
 .menu_categorytype li.class_menuitem_category a.menuitem_category_link { margin: 0px; padding: 0px 0px 0px 12px; list-style: none; line-height: 18px; width: 136px; float: left; color: rgb(255, 255, 255); text-decoration: none; background: url(https://www.hookahcompany.com/images_templ/hc/bullet-leftmenu.png) 4px 5px no-repeat; }
@@ -102,7 +258,7 @@ div.skype_c2c_menu_toll_info { border-top-width: 1px !important; border-top-styl
 .resp-menu-btn { float:left; width:16%; margin:12px 0 0 0;}
 .resp-triList-container { float:left; width:84%;}
 ul.resp-triList { margin:0; padding:0; list-style-type:none; font: bold 14px/1 Arial, Helvetica, sans-serif; color:#fff; text-transform:capitalize;}
-ul.resp-triList li { margin:0; padding:0; list-style-type:none; display:inline; width:25%; float:left; text-align:center;}
+ul.resp-triList li { margin:0; padding:0; list-style-type:none; display:inline; text-align:center;}
 ul.resp-triList li a:link,
 ul.resp-triList li a:visited{ text-decoration:none; color:#fff; display:block; padding:30px 0 0 0;}
 ul.resp-triList li a:hover { text-decoration:underline; color:#fff;}
