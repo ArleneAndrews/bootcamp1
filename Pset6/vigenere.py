@@ -15,13 +15,15 @@ def toVigenere(key, incoming):
         letter = letter.upper()
         if 'A' <= letter <= 'Z':
             location = ord(letter)
-            shifts = (shift[count % len(shift)])
+            shifts = ord((shift[count % len(shift)]))
+            count += 1
             new_ascii = location + shifts
+            print(new_ascii)
             if  ord('Z') < new_ascii:
                 new_ascii = int(((new_ascii - ord('A')) % 26) + ord('A'))
             character = chr(new_ascii)
-            count += 1
+            
         cypher = cypher + character
     return cypher
 
-print(toVigenere(message))
+print(toVigenere(key, message))
