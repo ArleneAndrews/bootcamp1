@@ -1,6 +1,6 @@
 body { margin: 0px;
        padding: 0px; 
-       font-family: Arial, Helvetica, sans-serif; 
+       font-family: sans-serif; 
        font-size: 12px; 
        color: #333333;
        line-height: 1.6em; 
@@ -10,17 +10,17 @@ body { margin: 0px;
     min-height: 200px;  
 }
 #main-container2 { 
-    width: 980px; 
+    width: 60%; 
     margin: auto; }
 #header-box { 
     float: left; 
-    width: 980px; 
+    width: 60%; 
 }
 #top-bar { 
     float: left; 
     height: 32px; 
     padding: 8px 0px 0px; 
-    width: 996px; 
+    width: 60%; 
 }
 
 #top-links { 
