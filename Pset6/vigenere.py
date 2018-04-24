@@ -15,7 +15,7 @@ def toVigenere(key, incoming):
         letter = letter.upper()
         if 'A' <= letter <= 'Z':
             location = ord(letter)
-            shifts = ord((shift[count % len(shift)]))
+            shifts = ((shift[count % len(shift)]))
             count += 1
             new_ascii = location + shifts
             print(new_ascii)
