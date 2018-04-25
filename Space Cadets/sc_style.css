@@ -4,13 +4,14 @@ body { margin: 0px;
        font-size: 12px; 
        color: #333333;
        line-height: 1.6em; 
+       background-color: wheat;
     }
 #main-container1 { 
     width: 60%; 
     min-height: 200px;  
 }
 #main-container2 { 
-    width: 60%; 
+    width: 40%; 
     margin: auto; }
 #header-box { 
     float: left; 
