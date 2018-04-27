@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <head>
-    <!--
-        I can see the weather in my current location.
-        I can push a button to toggle between Fahrenheit and Celsius.
-    -->
+    
     <meta charset="utf-8">
     <!--remove for codepen-->
     <title> Wiki Viewer </title>
     <script type="text/javascript" src="wiki.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" type="text/css" href="wiki.css">
-    <!--end remove-->
-
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+   <!--end remove-->
     
 </head>
 
@@ -20,23 +17,17 @@
 
            
             <div id = "searchWhat"> 
-                <p>{{ message }}</p>
-                <input v-model="message">
+                <p>
+                <!-- specify the link by passing the `to` prop. -->
+                <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+                <router-link to="/bar">Search for a topic</router-link>
+                <router-link to="/foo">Show me a random page</router-link> 
+                <!-- route outlet -->
+                <!-- component matched by the route will render here -->
+                <router-view></router-view>
+                </p>
             </div>
-            <button id = "button2" onclick=geoFindMeF()>Show me a random page</button>
-
-
-            <div class="results">
-                <div id="icon">
-                </div>
-                <div id="temp">
-                </div>
-                <div id="main">
-                </div>
-                <div id="detail">
-                </div>
-                
-            </div>
+                        
 </body>
 
 </html>
