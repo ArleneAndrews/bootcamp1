@@ -23,7 +23,7 @@ def toVigenere(key, incoming):
             position = [count % len(shift)]
             print(position)
             #converts key letter to offset (ord minus A)
-            converted = (((shift[count % len(shift)])) - 65)
+            converted =  (ord(shift[position])) - 65
             #Increases count
             count += 1
             #add offset to old letter ordinal
@@ -32,7 +32,9 @@ def toVigenere(key, incoming):
             #wrap around to avoid non-letter chars
             if  ord('Z') < new_ascii:
                 new_ascii = int(((new_ascii - ord('A')) % 26) + ord('A'))
+                
             character = chr(new_ascii)
+
         #adds characters and punctuation to string
         cypher = cypher + character
     return cypher
