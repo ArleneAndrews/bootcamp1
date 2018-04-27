@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home';
+
+// Moved to pages from components
+import Home from '@/pages/Home';
+import Cart from '@/pages/Cart';
+import Admin from '@/pages/Admin';
 
 Vue.use(Router);
 
@@ -9,7 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin,
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart,
     }
   ]
 });
