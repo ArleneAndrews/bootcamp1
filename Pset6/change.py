@@ -1,3 +1,5 @@
+import math
+
 due = float(input("Amount due. "))
     
 give = float(input("Amount recieved. "))
@@ -6,12 +8,12 @@ if give < due:
 
 total = give - due
 total = round (total, 2)
-print(total)
 answer = ''
 
 if total >= 1.0:
     dollars = total/1.0
-    total = total  - int(dollars)
+    dollars =math.floor(dollars)
+    total = total  - dollars
     answer = answer + str(dollars) +' dollars '
 
 if total >= .25:
