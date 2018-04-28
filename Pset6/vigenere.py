@@ -10,17 +10,21 @@ def toVigenere(key, incoming):
     for char in key:
         char = char.upper()
         shift = shift + char
-    
+
+    stupid = len(shift)
+    print (int(stupid))
+        
     for letter in incoming:
+        
+        #changes to all uppercase
+        letter = letter.upper()
         #figures out if it's a letter
         if 'A' <= letter <= 'Z':
-            #changes to all uppercase
-            letter = letter.upper()
             #converts letter to its ordial form
             location = ord(letter)
-            print (letter)
+            print (location)
             #finds out where in the key we are
-            position = [count % len(shift)]
+            position = int([count % int(stupid)])
             print(position)
             #converts key letter to offset (ord minus A)
             converted =  (ord(shift[position])) - 65
