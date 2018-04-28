@@ -12,7 +12,6 @@ def toVigenere(key, incoming):
         shift = shift + char
 
     stupid = len(shift)
-    print (int(stupid))
         
     for letter in incoming:
         
@@ -22,25 +21,22 @@ def toVigenere(key, incoming):
         if 'A' <= letter <= 'Z':
             #converts letter to its ordial form
             location = ord(letter)
-            print (location)
             #finds out where in the key we are
-            position = int([count % int(stupid)])
-            print(position)
-            #converts key letter to offset (ord minus A)
+            position = count % stupid
+           #converts key letter to offset (ord minus A)
             converted =  (ord(shift[position])) - 65
             #Increases count
             count += 1
             #add offset to old letter ordinal
             new_ascii = location + converted
-            print(new_ascii)
             #wrap around to avoid non-letter chars
             if  ord('Z') < new_ascii:
                 new_ascii = int(((new_ascii - ord('A')) % 26) + ord('A'))
                 
-            character = chr(new_ascii)
-
+            letter = chr(new_ascii)
         #adds characters and punctuation to string
-        cypher = cypher + character
+        cypher = cypher + letter
+
     return cypher
 
 print(toVigenere(key, message))
