@@ -1,15 +1,18 @@
-export default {
-  computed: {
-    username () {
-      // We will see what `params` is shortly
-      return this.$route.params.username
-    }
-  },
-  methods: {
-    goBack () {
-      window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+<template>
+  <div>
+    <div class="title">
+      <h1>{{msg}}</h1>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'Random',
+    data () {
+      return {
+        msg: 'Welcome to the Random Page'
+      }
     }
   }
-}
+</script>
