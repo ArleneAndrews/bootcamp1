@@ -22,6 +22,19 @@
                 <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
                 <router-link to="/search">Search for a topic</router-link>
                 <router-link to="/random">Show me a random page</router-link> 
+                <nav>
+                    <div class="container">
+                      <ul class="nav__left">
+              
+                        <!-- Navigation Links -->
+                        <li><router-link to="/">Home</router-link></li>
+                        <li><router-link to="/admin">Admin</router-link></li>
+                        <li><router-link to="/cart">Cart</router-link></li>
+              
+                      </ul>
+                    </div>
+                  </nav>
+              
                 <!-- route outlet -->
                 <!-- component matched by the route will render here -->
                 <router-view></router-view>
