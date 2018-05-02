@@ -13,26 +13,13 @@
 </head>
 
 <body>
-        <h1>Wiki Searcher</h1>
-<!-- Need to make these buttons to satisfy requirements -->
-           
-            <div id = "searchWhat"> 
-                <p>
-                <!-- specify the link by passing the `to` prop. -->
-                <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-                <router-link to="/search">Search for a topic</router-link>
-                <router-link to="/random">Show me a random page</router-link> 
-                <!-- route outlet -->
-                <!-- component matched by the route will render here -->
-                <router-view></router-view>
-                </p>
+    <h1>Wiki Searcher</h1>
+        <button id = "button1" onclick=geoFindMe()>Search for a topic</button>
+        <button id = "button2" onclick=geoFindMe()>Show me a random page</button> 
+            <div class="results">
+                <div id="results">
+                </div>
             </div>
-            <script>
-                export default {
-                  //...
-                };
-                </script>
-                        
 </body>
 
 </html>
