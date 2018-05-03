@@ -13,13 +13,24 @@
 </head>
 
 <body>
+        <img src = "https://cdn.pixabay.com/photo/2017/02/26/00/04/jigsaw-2099124_960_720.png" width = 362 alt = "Puzzle pieces in a circle">
     <h1>Wiki Searcher</h1>
+    <div class="row">
+            <div class="eight columns offset-by-two">
+                <form action="" class="wiki-search-form">
+                    <input type="search" placeholder="Search Wikipedia..." class="wiki-search-input" id="wiki-search-input">
+                    <button class="button btn btn-wiki">Wiki Search</button>
+                    <a class="button btn btn-lucky" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">I'm Feeling Lucky</a>
+                </form>
+            </div>
+        </div>
         <button id = "button1" onclick=Search()>Search for a topic</button>
         <button id = "button2" onclick=Random()>Show me a random page</button> 
             <div class="results">
                 <div id="results">
                 </div>
             </div>
+            <!-- Hans-Peter Gauster @sloppyperfectionist on <a href ="unsplash.com">Unspalsh</a> -->
 </body>
 
 </html>
