@@ -1,7 +1,6 @@
 function Random() {
-    let url = "https://en.wikipedia.org/wiki/Special:Random"
-// display url in results
-}
+    window.location= "https://en.wikipedia.org/wiki/Special:Random";
+    }
 
 function Search(term){
     //regex for psces and punctuation
