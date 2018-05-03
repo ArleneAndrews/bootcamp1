@@ -3,7 +3,7 @@
     
     <meta charset="utf-8">
     <!--remove for codepen-->
-    <title> Wiki Viewer </title>
+    <title> WikiFind </title>
     <script type="text/javascript" src="wiki.js"></script>
     <link rel="stylesheet" type="text/css" href="wiki.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,19 +13,19 @@
 </head>
 
 <body>
-        <img src = "https://cdn.pixabay.com/photo/2017/02/26/00/04/jigsaw-2099124_960_720.png" width = 362 alt = "Puzzle pieces in a circle">
-    <h1>Wiki Searcher</h1>
-    <div class="row">
-            <div class="eight columns offset-by-two">
+        <img src = "https://cdn.pixabay.com/photo/2017/02/26/00/04/jigsaw-2099124_960_720.png" alt = "Puzzle pieces in a circle">
+    <h1>WikiFind</h1>
+    <div>
+            <div>
                 <form action="" class="wiki-search-form">
                     <input type="search" placeholder="Search Wikipedia..." class="wiki-search-input" id="wiki-search-input">
-                    <button class="button btn btn-wiki">Wiki Search</button>
-                    <a class="button btn btn-lucky" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">I'm Feeling Lucky</a>
+                    <!-- https://tse4.mm.bing.net/th?id=OIP.oLGEgjijNa4y8a4y1PQKBwHaHa&pid=Api -->
+                    <button id = "button1" onclick=Search()>Search for a topic</button><p></p>
+                    <button id = "button2" onclick=Random()>Show me a random page</button> 
                 </form>
             </div>
         </div>
-        <button id = "button1" onclick=Search()>Search for a topic</button>
-        <button id = "button2" onclick=Random()>Show me a random page</button> 
+       
             <div class="results">
                 <div id="results">
                 </div>
