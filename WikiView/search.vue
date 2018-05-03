@@ -1,7 +1,8 @@
 <template>
+<form @submit.prevent="saveProduct">
   <div>
     <div class="title">
-      <h1>{{msg}}</h1>
+      <input type="text" placeholder="Search for" v-model="model.name" v-validate="'required'" name="name" />
     </div>
   </div>
 </template>
@@ -15,4 +16,14 @@
       }
     }
   }
+</script>
+<script>
+export default {
+  methods: {
+    saveProduct() {
+      // prints all the errors
+      console.log(this.errors);
+    }
+  }
+}
 </script>
