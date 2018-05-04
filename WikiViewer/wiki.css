@@ -1,24 +1,19 @@
 html {
     background-color: oldlace;
     font-size: 20px;
-    /* background: url("https://unsplash.com/wallpaper/1065396/desktop-wallpapers") bottom center; */
     background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    -moz-background-size: cover;    
+    -moz-background-size: cover;
 }
 img {
        width: 90px;
 }
  form {
-     text-align: center;
+    text-align: center;
     margin: 0 auto; 
     width:60%;
  }
-
-#button1 , #button2 {
-    display:inline-block;
-    }
