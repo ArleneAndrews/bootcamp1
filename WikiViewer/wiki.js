@@ -6,7 +6,9 @@ function Random() {
     window.location= "https://en.wikipedia.org/wiki/Special:Random";
     }
 
-function ajax (keyword) { //AJAX request
+function Search(keyword) { //AJAX request
+	let keyword =keyword.replace(/ /g, "%20");
+
 	$.ajax({ 
 		url: "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&prop=info&inprop=url&utf8=&format=json",
 		dataType: "jsonp",
@@ -49,7 +51,7 @@ function showError(keyword) {
 	$(".display-results").append( "<div class='error'> <p>Your search <span class='keyword'>" + keyword + "</span> did not match any documents.</p> <p>Suggestions:</p><li>Make sure that all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></div> ");
 }
 
-$(".result-btn-wiki").click(function (event) {
+/* $(".result-btn-wiki").click(function (event) {
 	event.preventDefault();
 	$(".display-results").html("");
 	var keyword = $(".result-wiki-search-form-input").val();
@@ -70,10 +72,10 @@ $(".btn-wiki").click(function(event) {
 		document.getElementById("result-wiki-search-form-input").blur();	
 		$(".display-results").html("");
 		ajax(keyword);
-	}
+	} 
 
 	else {
 		alert("Enter a keyword into the search box");
 	}
 	
-});
+}); */
