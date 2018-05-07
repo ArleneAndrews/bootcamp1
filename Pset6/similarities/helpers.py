@@ -2,17 +2,15 @@ def lines(a, b):
     """Return lines in both a and b"""
     #start new code
     # Split into lines
-    fileOne = set(a.splitlines([keepends]))
-    print(fileOne)
-    fileTwo = set(b.splitlines([keepends]))
-    print(fileTwo)
+    fileOne = a.splitlines(True)
+    fileTwo = b.splitlines(True)
     # compare a to b
-    #sameLines = fileOne&fileTwo
-
+    sameLines = fileOne&fileTwo
+    print(sameLines)
     # Return list of lines
     #end new code
     #  TODO
-    #return {}
+    return sameLines
 
 
 def sentences(a, b):
