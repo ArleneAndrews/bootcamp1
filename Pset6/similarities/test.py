@@ -2,8 +2,9 @@ from helpers import lines
 
 open("a.txt.", "r")
 open("b.txt.", "r")
-compare (a, b)
+compare(a, b)
 print (sameLines)
+
 def compare():
     """Handle requests for /compare via POST"""
     # Read files
