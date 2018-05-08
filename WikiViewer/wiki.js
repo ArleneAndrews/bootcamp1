@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.getElementById("wiki-search-input").focus();
+    document.getElementById("searchInput").focus();
    };
 
 function Random() {
@@ -7,7 +7,8 @@ function Random() {
     }
 
 function Search(keyword) { //AJAX request
-	let theText = myTextInput.value;
+	let theText = ('searchInput').value;
+	console.log(keyword);
 	console.log(theText);
 	//function to regex input
 		/* var keyword = keyword.replace(/ /g, "_");
