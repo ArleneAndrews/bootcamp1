@@ -17,10 +17,11 @@
     <h1>WikiFind</h1>
     <div>
             <div>
-                <form action="">
-                    <input type="search" placeholder="Search Wikipedia..." class="wiki-search-input" id="wiki-search-input">
+                <form>
+                    <!-- This may work better - the id is what will be returned, the name is needed for the input reference -->
+                    <input type="text" placeholder="Search Wikipedia..."  id="search-input" name ="search-input">
                     <button type = "button" onclick=Search()>Search</button>
-                    <p>
+                    <p></p>
                     <button type = "button" onclick=Random()>Show me a random page</button> 
                 </form>
             </div>

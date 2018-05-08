@@ -7,8 +7,10 @@ function Random() {
     }
 
 function Search(keyword) { //AJAX request
+	let theText = myTextInput.value;
+	console.log(theText);
 	//function to regex input
-		var keyword = keyword.replace(/ /g, "_");
+		/* var keyword = keyword.replace(/ /g, "_");
 
 	$.ajax( {
 		url: remoteUrlWithOrigin,
@@ -20,7 +22,7 @@ function Search(keyword) { //AJAX request
 		   showResults()
 		   console.log (data)
 		}
-	} );
+	} ); */
 }
  function showResults (callback) {
 
