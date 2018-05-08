@@ -8,7 +8,7 @@ function Random() {
 
 function Search(keyword) { //AJAX request
 	//function to regex input
-		let keyword =keyword.replace(/ /g, "%20");
+		var keyword = keyword.replace(/ /g, "_");
 
 	$.ajax( {
 		url: remoteUrlWithOrigin,
@@ -17,11 +17,12 @@ function Search(keyword) { //AJAX request
 		type: 'POST',
 		success: function(data) {
 		   // do something with data
+		   showResults()
 		   console.log (data)
 		}
 	} );
 }
-/* function showResults (callback) {
+ function showResults (callback) {
 
 	for (var i = 0; i <= 9; i++) {
 		$(".display-results").append("<div class='result-list result-" + i + "'>" + "<span class='result-title title-" + i + "'></span>" + "<br>" +"<span class='result-snippet snippet-" + i + "'></span>" + "<br>" + "<span class='result-metadata metadata-" + i + "'></span>" + "</div>" );
@@ -38,13 +39,13 @@ function Search(keyword) { //AJAX request
 		$(".snippet-" + m).html(callback.query.search[m].snippet);
 		$(".metadata-" + m).html((callback.query.search[m].size/1000).toFixed(0) + "kb (" + callback.query.search[m].wordcount + " words) - " + timestamp);
 	}
-} */
+} 
 
 function showError(keyword) {
 	$(".display-results").append( "<div class='error'> <p>Your search <span class='keyword'>" + keyword + "</span> did not match any documents.</p> <p>Suggestions:</p><li>Make sure that all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li></div> ");
 }
 
-/* $(".result-btn-wiki").click(function (event) {
+ /* $(".result-btn-wiki").click(function (event) {
 	event.preventDefault();
 	$(".display-results").html("");
 	var keyword = $(".result-wiki-search-form-input").val();
