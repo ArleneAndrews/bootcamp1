@@ -15,16 +15,13 @@ function Search(keyword) { //AJAX request
 
 		return fetch(url)
 		.then(function(response) {
-			return fetch(url)
-			.then(function(response) {
-			  return response.json();
+			 return response.json();
 			})
 			.then(function(myJson) {
 				var  searchResults = myJson;
 				console.log(searchResults);
 			}); 
-	})
-}
+	}
 
 //show top 10 results
 //show error fo no results
