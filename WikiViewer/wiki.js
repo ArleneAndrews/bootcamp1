@@ -18,9 +18,9 @@ function Search(keyword) { //AJAX request
 			 return response.json();
 			})
 			.then(function(myJson) {
-				var  searchResults = myJson;
-				document.getElementById('results').innerHTML =searchResults;
-				console.log(searchResults);
+				var searchResults = myJson;
+				document.getElementById('results').innerHTML =searchResults.query.search;
+				console.log(searchResults.query.search);
 			}); 
 	}
 
