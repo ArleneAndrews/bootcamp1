@@ -11,7 +11,7 @@ function Search(keyword) { //AJAX request
 	
 	//function to regex input
 		let textReplaceSpaces = theText.replace(/ /g, "_");
-		var url ="https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&ids="+textReplaceSpaces+"&format=jsonp";
+		var url ="https://www.wikidata.org/w/api.php?action=query&origin=*&list=search&srsearch="+textReplaceSpaces+"&format=json";
 
 		return fetch(url)
 		.then(function(response) {
@@ -19,6 +19,7 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var  searchResults = myJson;
+				document.getElementById('results').innerHTML =searchResults;
 				console.log(searchResults);
 			}); 
 	}
