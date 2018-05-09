@@ -19,10 +19,23 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var searchResults = myJson;
-				document.getElementById('results').innerHTML =searchResults.query.search;
-				console.log(searchResults.query.search);
+				if searchResults.len < 1{
+					//error script
+				}
+				else{
+				topTen();
+				}
 			}); 
 	}
 
 //show top 10 results
-//show error fo no results
+function topTen(data) {
+	for (i = 0, i < 10, i++) {
+//get the title 
+//get the snippit
+document.getElementById('results').innerHTML =searchResults.query.search;
+//break
+	};
+
+
+}
