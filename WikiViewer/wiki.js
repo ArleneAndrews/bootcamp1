@@ -11,20 +11,19 @@ function Search(keyword) { //AJAX request
 	
 	//function to regex input
 		let textReplaceSpaces = theText.replace(/ /g, "_");
-		console.log (textReplaceSpaces)
+		var url ="https://www.wikidata.org/w/api.php?action=wbgetentities&origin=*&ids="+textReplaceSpaces+"&format=jsonp";
 
-	$.ajax( {
-		url: remoteUrlWithOrigin,
-		data: queryData,
-		dataType: 'json',
-		type: 'POST',
-		success: function(data) {
-		   // do something with data
-		   console.log (data)
-		   //showResults()
-		   
-		}
-	} ); 
+		return fetch(url)
+		.then(function(response) {
+			return fetch(url)
+			.then(function(response) {
+			  return response.json();
+			})
+			.then(function(myJson) {
+				var  searchResults = myJson;
+				console.log(searchResults);
+			}); 
+	})
 }
 /* function showResults (callback) {
 
