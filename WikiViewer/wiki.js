@@ -19,7 +19,8 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var searchResults = myJson;
-				console.log(searchResults.query.search)
+				pages = searchResults.query.search
+				console.log(pages)
 				if (searchResults.query.search == []){
 					//error script
 				}
@@ -31,16 +32,16 @@ function Search(keyword) { //AJAX request
 
 //show top 10 results
 function topTen(data) {
-	
-	for(i = 0; i < 10; i++) {
-		//const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
-//get the title 
+	const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
+	/* for(i = 0; i < 10; i++) {
+	//get the title 
 		pageTitle = searchResults.query.search[i].title;
 		console.log(pageTitle);
 //get the pageid
 		pageID = searchResults.query.search[i].pageid;
-		console.log(pageID);
+		console.log(pageID); */
+		const urls = results.map(result => getWikiPageUrl(result));
 		//document.getElementById('results').innerHTML = searchResults.query.search;
 //break
-	};
-}
+/*};*/
+;}
