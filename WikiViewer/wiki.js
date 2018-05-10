@@ -19,23 +19,24 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var searchResults = myJson;
-				if searchResults.len < 1{
+				console.log(searchResults.query.search)
+				if (searchResults.query.search == []){
 					//error script
 				}
 				else{
-				topTen();
+					topTen();
 				}
 			}); 
 	}
 
 //show top 10 results
 function topTen(data) {
-	for (i = 0, i < 10, i++) {
+	
+	for(i = 0; i < 10; i++) {
+		const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
 //get the title 
 //get the snippit
 document.getElementById('results').innerHTML =searchResults.query.search;
 //break
 	};
-
-
 }
