@@ -10,8 +10,8 @@ function Search(keyword) { //AJAX request
 	let theText = (searchInput).value;
 	
 	//function to regex input
-		let textReplaceSpaces = theText.replace(/ /g, "_");
-		var url ="https://www.wikidata.org/w/api.php?action=query&origin=*&list=search&srsearch="+textReplaceSpaces+"&format=json&srprop=redirecttitle&srprop=redirectsnippet";
+		let textReplaceSpaces = theText.replace(/ /g, "%20");
+		var url ="https://www.wikidata.org/w/api.php?action=query&list=search&origin=*&format=json&prop=pageimages%7Cpageterms&formatversion=2&titles="+textReplaceSpaces;
 
 		return fetch(url)
 		.then(function(response) {
@@ -19,29 +19,52 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var searchResults = myJson;
-				pages = searchResults.query.search
-				console.log(pages)
+				console.log(myJson)
 				if (searchResults.query.search == []){
 					//error script
 				}
 				else{
-					topTen(searchResults.query.search);
+					topTen(pages);
 				}
 			}); 
 	}
 
 //show top 10 results
-function topTen(data) {
-	const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
+function topTen(pages) {
+	for (const result of pages) {
+
+		pageTitle = result.title;
+		console.log(pageTitle);
+
+		pageID = result.pageid
+		console.log(pageID);
+		urls = 'http://en.wikipedia.org/?curid='+pageID
+		document.getElementById('results').innerHTML = urls
+	/* const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
+	const urls = pages.map(result => getWikiPageUrl(result));
+	document.getElementById('results').innerHTML = urls */
+};
+
+	//const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
+	//const urls = pages.map(result => getWikiPageUrl(result));
+	document.getElementById('results').innerHTML = urls
+
+	/* //idea 2
+	var i = array.length;
+
+while (i--) {
+	//do something
+} */
+//idea 1
 	/* for(i = 0; i < 10; i++) {
 	//get the title 
 		pageTitle = searchResults.query.search[i].title;
 		console.log(pageTitle);
-//get the pageid
+	//get the pageid
 		pageID = searchResults.query.search[i].pageid;
 		console.log(pageID); */
-		const urls = results.map(result => getWikiPageUrl(result));
+	
 		//document.getElementById('results').innerHTML = searchResults.query.search;
-//break
-/*};*/
+	//break
+	/*};*/
 ;}
