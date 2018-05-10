@@ -24,7 +24,7 @@ function Search(keyword) { //AJAX request
 					//error script
 				}
 				else{
-					topTen();
+					topTen(searchResults.query.search);
 				}
 			}); 
 	}
@@ -33,10 +33,14 @@ function Search(keyword) { //AJAX request
 function topTen(data) {
 	
 	for(i = 0; i < 10; i++) {
-		const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
+		//const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
 //get the title 
-//get the snippit
-document.getElementById('results').innerHTML =searchResults.query.search;
+		pageTitle = searchResults.query.search.[i].title;
+		console.log(pageTitle);
+//get the pageid
+		pageID = searchResults.query.search.[i].pageid;
+		console.log(pageID);
+		//document.getElementById('results').innerHTML = searchResults.query.search;
 //break
 	};
 }
