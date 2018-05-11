@@ -11,7 +11,7 @@ function Search(keyword) { //AJAX request
 	
 	//function to regex input
 		let textReplaceSpaces = theText.replace(/ /g, "%20");
-		var url ="https://www.wikidata.org/w/api.php?action=query&list=search&origin=*&format=json&prop=pageimages%7Cpageterms&formatversion=2&titles="+textReplaceSpaces;
+		var url ="https://www.wikidata.org/w/api.php?action=query&list=search&origin=*&format=json&srsearch="+textReplaceSpaces;
 
 		return fetch(url)
 		.then(function(response) {
@@ -19,16 +19,16 @@ function Search(keyword) { //AJAX request
 			})
 			.then(function(myJson) {
 				var searchResults = myJson;
-				console.log(myJson)
-				if (searchResults.query.search == []){
+				var refined =searchResults.query.search
+				if ( refined == []){
 					//error script
 				}
 				else{
-					topTen(pages);
+					topTen(refined);
 				}
 			}); 
 	}
-
+	
 //show top 10 results
 function topTen(pages) {
 	for (const result of pages) {
@@ -38,8 +38,8 @@ function topTen(pages) {
 
 		pageID = result.pageid
 		console.log(pageID);
-		urls = 'http://en.wikipedia.org/?curid='+pageID
-		document.getElementById('results').innerHTML = urls
+		/* const urls = 'http://en.wikipedia.org/?curid='+pageID
+		document.getElementById('results').innerHTML = urls */
 	/* const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
 	const urls = pages.map(result => getWikiPageUrl(result));
 	document.getElementById('results').innerHTML = urls */
