@@ -17,3 +17,7 @@ img {
     margin: 0 auto; 
     width:60%;
  }
+ article {
+    text-align: left;
+    color: black;
+  }

@@ -11,60 +11,20 @@ function Search(keyword) { //AJAX request
 	
 	//function to regex input
 		let textReplaceSpaces = theText.replace(/ /g, "%20");
-		var url ="https://www.wikidata.org/w/api.php?action=query&list=search&origin=*&format=json&srsearch="+textReplaceSpaces;
+		var url ="https://en.wikipedia.org/w/api.php?action=opensearch&search="+textReplaceSpaces+"&format=json&callback=?"
 
-		return fetch(url)
-		.then(function(response) {
-			 return response.json();
-			})
-			.then(function(myJson) {
-				var searchResults = myJson;
-				var refined =searchResults.query.search
-				if ( refined == []){
-					//error script
-				}
-				else{
-					topTen(refined);
-				}
-			}); 
-	}
-	
-//show top 10 results
-function topTen(pages) {
-	for (const result of pages) {
-
-		pageTitle = result.title;
-		console.log(pageTitle);
-
-		pageID = result.pageid
-		console.log(pageID);
-		/* const urls = 'http://en.wikipedia.org/?curid='+pageID
-		document.getElementById('results').innerHTML = urls */
-	/* const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
-	const urls = pages.map(result => getWikiPageUrl(result));
-	document.getElementById('results').innerHTML = urls */
-};
-
-	//const getWikiPageUrl = id => 'http://en.wikipedia.org/?curid=${id}'
-	//const urls = pages.map(result => getWikiPageUrl(result));
-	document.getElementById('results').innerHTML = urls
-
-	/* //idea 2
-	var i = array.length;
-
-while (i--) {
-	//do something
-} */
-//idea 1
-	/* for(i = 0; i < 10; i++) {
-	//get the title 
-		pageTitle = searchResults.query.search[i].title;
-		console.log(pageTitle);
-	//get the pageid
-		pageID = searchResults.query.search[i].pageid;
-		console.log(pageID); */
-	
-		//document.getElementById('results').innerHTML = searchResults.query.search;
-	//break
-	/*};*/
-;}
+		$.ajax({
+			type:"GET",
+			url: url,
+			async: false,
+			dataType: "json",
+			success: function(data){
+			  $("#content").html("");
+			  for (var i=0; i<data[1].length; i++){
+			  html = '<div id="results" class="well"><a href= "https://en.wikipedia.org/wiki/' + data[1][i] + '"target="blank">'+ '<h4>'+ data[1][i]+'</h4><br>'+'<p>'+ data[2][i]+ '</p></a></div>';
+			  $("#content").append(html);};
+			},
+			error: function(errorMessage){
+			  alert("Error");
+			}}
+		)}
