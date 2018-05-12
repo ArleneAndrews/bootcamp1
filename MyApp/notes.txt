@@ -1,0 +1,2 @@
+Tired of FCC, so off to explore! This is an app, inspired by a conversation in the Codding Blocks Slacks, for a lunch 
+roulette. The frst version will have where you are, and places nearby. Fianl version will have options to select (drinks served, for example), a indication if you've eaten there, and a link to online menus, their website, or reviews when available.
