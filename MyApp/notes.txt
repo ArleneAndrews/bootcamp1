@@ -1,2 +1,14 @@
 Tired of FCC, so off to explore! This is an app, inspired by a conversation in the Codding Blocks Slacks, for a lunch 
-roulette. The frst version will have where you are, and places nearby. Fianl version will have options to select (drinks served, for example), a indication if you've eaten there, and a link to online menus, their website, or reviews when available.
+roulette. The frst version will have where you are, and places nearby. Final version will have options to select (drinks served, for example), a indication if you've eaten there, and a link to online menus, their website, or reviews when available.
+User stories:
+The app will work mostly offline.
+The app will find my location.
+As an alternative, the app will let me enter a location.
+The app will show me nearby shops.
+The app will choose a unique random resturant with the click of a button.
+The app will let me sort shops by type.
+The app will show me Yelp-like information.
+The app will show me if I've visted a place before.
+The app will let me add my own rating, that will override the Yelp one.
+The app will remeber my selections.
+? The app will hold my preferences for more than one set of criteria
