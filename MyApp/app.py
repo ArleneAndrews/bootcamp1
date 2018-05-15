@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-import geocoder
+
 
 #Static file template
 app = Flask(__name__)
@@ -14,6 +14,3 @@ def sw():
 
 if __name__=='__main__':
     app.run(debug=True)
-
-g = geocoder.ip('me')
-print(g.latlng)
