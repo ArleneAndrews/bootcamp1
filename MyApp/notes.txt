@@ -3,6 +3,7 @@ roulette. The frst version will have where you are, and places nearby. Final ver
 User stories:
 The app will work mostly offline.
 The app will find my location.
+I can save my location at the touch of a button. (GDPR check)
 As an alternative, the app will let me enter a location.
 The app will offer options as I type. lowercase.parse.for.typo
 The app will show me nearby shops.

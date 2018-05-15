@@ -1,5 +1,7 @@
 from flask import Flask, render_template, url_for
 
+
+#Static file template
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
@@ -12,3 +14,7 @@ def sw():
 
 if __name__=='__main__':
     app.run(debug=True)
+
+import geocoder
+g = geocoder.ip('me')
+print(g.latlng)
