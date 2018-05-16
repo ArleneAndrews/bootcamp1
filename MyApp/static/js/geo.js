@@ -1,4 +1,5 @@
 document.getElementById("here").addEventListener("click", geoFindMe);
+document.getElementById("save").addEventListener("click", addSpot);
 
     function geoFindMe() {
           var output = document.getElementById("display");
@@ -27,4 +28,8 @@ document.getElementById("here").addEventListener("click", geoFindMe);
   output.innerHTML = "<p>Locating…</p>";
 
   navigator.geolocation.getCurrentPosition(success, error);
+}
+
+function addSpot {
+    Alert("This will add the current location to the app. Remove it from this spot to be determined.")
 }
