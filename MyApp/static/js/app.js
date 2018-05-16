@@ -10,7 +10,9 @@ function geoFindMe() {
    function success(position) {
      var latitude  = position.coords.latitude;
      var longitude = position.coords.longitude;
+     document.getElementById("display").innerHTML = "Hello World";
      return {lat:latitude, long: longitude}
    }
 }
-button.addEventListener("click", geoFindMe());
+
+document.getElementById("here").addEventListener("click", geoFindMe());
