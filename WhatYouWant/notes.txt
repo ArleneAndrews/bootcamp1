@@ -2,9 +2,9 @@ Tired of FCC, so off to explore! This is an app, inspired by a conversation in t
 roulette. The frst version will have where you are, and places nearby. Final version will have options to select (drinks served, for example), a indication if you've eaten there, and a link to online menus, their website, or reviews when available.
 User stories:
 The app will work mostly offline.
-The app will find my location.
-I can save my location at the touch of a button. (GDPR check)
-As an alternative, the app will let me enter a location.
+The app will find my location. * Done May 16, 2018
+I can save my location at the touch of a button.
+As an alternative, the app will let me enter a location. * Thinking future feature.
 The app will offer options as I type. lowercase.parse.for.typo
 The app will show me nearby shops.
 The app will choose a unique random resturant with the click of a button.
@@ -14,8 +14,9 @@ The app will show me if I've visted a place before.
 The app will let me add my own rating, that will override the Yelp one.
 The app will remember my selections.
 As a user I would like to group my.selections by categories such as work, personal, Sunday-Funday
-
+GDPR forms, consent, and notices everywhere.
 Resources:
 https://www.codementor.io/garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
 https://stackoverflow.com/questions/46381128/building-progressive-web-apps-using-python-flask
 https://spreadsheetsolving.com/lunch-decision/
+https://blog.varonis.com/gdpr-requirements-list-in-plain-english/
