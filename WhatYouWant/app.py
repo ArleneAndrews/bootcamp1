@@ -18,7 +18,7 @@ class Spot(db.Model):
     spotlong = db.Column(db.String(80), unique=True,nullable=False)
     
     def __repr__(self):
-        #return "<Spot: {}>".format(self.Spot) Need to format this
+        return "<Spot: {}>".format(self.name, self.spotlat, .selfspotlong) 
 
 #Adding a location for offline use 
      class Venue(db.Model):
@@ -30,9 +30,8 @@ class Spot(db.Model):
         venueStars =db.Column(db.String(80))
 
         def __repr__(self):
-            return "<Venue: {}>".format(self.Venue)"""
+            return "<Venue: {}>".format(self.name, self.location, self.phone, self.visit, self.yelp, self.stars)
 
-#adding a review
  """
 @app.route('/', methods=['GET'])
 def index():
