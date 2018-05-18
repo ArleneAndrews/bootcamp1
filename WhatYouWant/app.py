@@ -11,22 +11,29 @@ app.config["SQLALCHEMY_DATABASE_URI"] = database_file
 
 db = SQLAlchemy(app)
 
-#Adding a spot to the database
+""" #Adding a spot to the database
 class Spot(db.Model):
-    spotlat = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    spotlat = db.Column(db.String(80), unique=True, nullable=False)
     spotlong = db.Column(db.String(80), unique=True,nullable=False)
+    
     def __repr__(self):
-        #return "<Spot: {}>".format(self.spot) Need to format this
+        #return "<Spot: {}>".format(self.Spot) Need to format this
 
 #Adding a location for offline use 
-    """ class Book(db.Model):
-        title = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+     class Venue(db.Model):
+        veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+        venueLocation = db.Column(db.String(80), unique=True, nullable=False)
+        venuePhone = db.Column(db.String(80), unique=True, nullable=False)
+        venueVisit = db.Column(db.String(80), unique=True, nullable=False)
+        venueYelp = db.Column(db.String(200), unique=True)
+        venueStars =db.Column(db.String(80))
 
         def __repr__(self):
-            return "<Title: {}>".format(self.title)"""
+            return "<Venue: {}>".format(self.Venue)"""
 
 #adding a review
-
+ """
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
