@@ -18,7 +18,7 @@ class Spot(db.Model):
     spotlat = db.Column(db.String(80), unique=True, nullable=False)
     spotlong = db.Column(db.String(80), unique=True,nullable=False)
 
-     def __init__(self, spotName, spotlat, spotlong):
+    def __init__(self, spotName, spotlat, spotlong):
         self.spotName = spotName
         self.spotlat = spotlat
         self.spotlong = spotlong
