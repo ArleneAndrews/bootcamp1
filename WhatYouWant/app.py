@@ -4,13 +4,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
-database_file2 = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
+database_spot = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
+database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file2
-db = SQLAlchemy(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = database_spot
+app.config["SQLALCHEMY_DATABASE_URI"] = database_venue
+dbspot = SQLAlchemy(app)
 
 #Adding a spot to the database
 class Spot(db.Model):
