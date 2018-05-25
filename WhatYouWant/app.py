@@ -9,14 +9,18 @@ database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = database_spot
-app.config["SQLALCHEMY_DATABASE_URI"] = database_venue
+SQLALCHEMY_BINDS = {
+    'spot':        'mysqldb://localhost/users',
+    'appmeta':      'sqlite:////path/to/appmeta.db'
+}
 dbspot = SQLAlchemy(app)
 
 #Adding a spot to the database
 class Spot(db.Model):
+     __bind_key__ = 'spot'
     spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
-    spotlat = db.Column(db.String(80), unique=True, nullable=False)
-    spotlong = db.Column(db.String(80), unique=True,nullable=False)
+    spotlat = db.Column(db.Float, unique=True, nullable=False)
+    spotlong = db.Column(db.Float, unique=True,nullable=False)
 
     def __init__(self, spotName, spotlat, spotlong):
         self.spotName = spotName
@@ -30,10 +34,10 @@ class Spot(db.Model):
 class Venue(db.Model):
     veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     venueLocation = db.Column(db.String(80), unique=True, nullable=False)
-    venuePhone = db.Column(db.String(80), unique=True, nullable=False)
-    venueVisit = db.Column(db.String(80), unique=True, nullable=False)
+    venuePhone = db.Column(db.Interger, unique=True, nullable=True)
+    venueVisit = db.Column(db.Boolean, nullable=True)
     venueYelp = db.Column(db.String(200), unique=True)
-    venueStars =db.Column(db.String(80))
+    venueStars =db.Column(db.Interger, nullable=True)
 
     def __repr__(self):
         return "<Venue: {}>".format(self.name, self.location, self.phone, self.visit, self.yelp, self.stars)
