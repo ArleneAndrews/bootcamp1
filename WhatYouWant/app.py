@@ -32,6 +32,7 @@ class Spot(db.Model):
 
 #Adding a location for offline use 
 class Venue(db.Model):
+     __bind_key__ = 'venue'
     veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     venueLocation = db.Column(db.String(80), unique=True, nullable=False)
     venuePhone = db.Column(db.Interger, unique=True, nullable=True)
