@@ -17,7 +17,7 @@ dbspot = SQLAlchemy(app)
 
 #Adding a spot to the database
 class Spot(db.Model):
-     __bind_key__ = 'spot'
+    __bind_key__ = 'spot'
     spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     spotlat = db.Column(db.Float, unique=True, nullable=False)
     spotlong = db.Column(db.Float, unique=True,nullable=False)
@@ -32,7 +32,7 @@ class Spot(db.Model):
 
 #Adding a location for offline use 
 class Venue(db.Model):
-     __bind_key__ = 'venue'
+    __bind_key__ = 'venue'
     veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     venueLocation = db.Column(db.String(80), unique=True, nullable=False)
     venuePhone = db.Column(db.Interger, unique=True, nullable=True)
