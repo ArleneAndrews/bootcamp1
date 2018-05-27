@@ -18,7 +18,7 @@ def lines(a, b):
     return sameLines
 
 
-#start new defs
+#start new defs Thank you https://stackoverflow.com/questions/4576077/python-split-text-on-sentences Tennis Visuals!
 def find_sentences(paragraph):
     end = True
     sentences = []

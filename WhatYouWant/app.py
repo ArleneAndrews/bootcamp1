@@ -4,19 +4,23 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
-database_file2 = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
+database_spot = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
+database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file
-app.config["SQLALCHEMY_DATABASE_URI"] = database_file2
+app.config["SQLALCHEMY_DATABASE_URI"] = database_venue
+SQLALCHEMY_BINDS = {
+    'spot':        'mysqldb://localhost/users',
+    'venue':      'mysqldb://localhost/users'
+}
 db = SQLAlchemy(app)
 
 #Adding a spot to the database
 class Spot(db.Model):
+    __bind_key__ = 'spot'
     spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
-    spotlat = db.Column(db.String(80), unique=True, nullable=False)
-    spotlong = db.Column(db.String(80), unique=True,nullable=False)
+    spotlat = db.Column(db.Float, unique=True, nullable=False)
+    spotlong = db.Column(db.Float, unique=True,nullable=False)
 
     def __init__(self, spotName, spotlat, spotlong):
         self.spotName = spotName
@@ -28,18 +32,26 @@ class Spot(db.Model):
 
 #Adding a location for offline use 
 class Venue(db.Model):
+    __bind_key__ = 'venue'
     veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     venueLocation = db.Column(db.String(80), unique=True, nullable=False)
-    venuePhone = db.Column(db.String(80), unique=True, nullable=False)
-    venueVisit = db.Column(db.String(80), unique=True, nullable=False)
+    venuePhone = db.Column(db.Integer, unique=True, nullable=True)
+    venueVisit = db.Column(db.Boolean, nullable=True)
     venueYelp = db.Column(db.String(200), unique=True)
-    venueStars =db.Column(db.String(80))
+    venueStars =db.Column(db.Integer, nullable=True)
 
     def __repr__(self):
         return "<Venue: {}>".format(self.name, self.location, self.phone, self.visit, self.yelp, self.stars)
 
 
 @app.route('/', methods=['GET'])
+def home():
+    if request.form:
+        spot = Spot(spotName=request.form.get("spotName"))
+        db.session.add(spot)
+        db.session.commit()
+    return render_template("home.html")
+
 def index():
     return render_template('index.html')
 
