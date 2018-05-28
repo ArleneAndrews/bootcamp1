@@ -8,12 +8,18 @@ database_spot = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
 database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = database_venue
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir))
 SQLALCHEMY_BINDS = {
-    'spot':        'mysqldb://localhost/users',
-    'venue':      'mysqldb://localhost/users'
+    'spot':        'mysqldb://localhost/spot',
+    'venue':        'mysqldb://localhost/venue'
 }
 db = SQLAlchemy(app)
+
+#Adding tags
+tags = db.Table('tags',
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True),
+    db.Column('page_id', db.Integer, db.ForeignKey('page.id'), primary_key=True)
+)
 
 #Adding a spot to the database
 class Spot(db.Model):
@@ -39,9 +45,15 @@ class Venue(db.Model):
     venueVisit = db.Column(db.Boolean, nullable=True)
     venueYelp = db.Column(db.String(200), unique=True)
     venueStars =db.Column(db.Integer, nullable=True)
+    tags = db.relationship('Tag', secondary=tags, lazy='subquery',
+        backref=db.backref('pages', lazy=True))
 
     def __repr__(self):
-        return "<Venue: {}>".format(self.name, self.location, self.phone, self.visit, self.yelp, self.stars)
+       return "<Venue: {}>".format(self.name)
+    
+    
+    class Tag(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
 
 
 @app.route('/', methods=['GET'])
