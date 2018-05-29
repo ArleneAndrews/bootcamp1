@@ -1,0 +1,10 @@
+I can log in -TODO
+I can input the number of segments I want to work out
+I can specify the length of each segment
+I can choose from pre-entered plans
+I can add my own plans -todo
+I will get a beep when segments change.
+I will get a voice notice of the next activity, if availabe.
+I will see how much more time is left on each segment.
+I can choose to see how much time overall I have left.
+I can choose to log my progress.
