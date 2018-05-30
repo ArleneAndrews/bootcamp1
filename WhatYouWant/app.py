@@ -1,5 +1,5 @@
 import os
-
+from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
