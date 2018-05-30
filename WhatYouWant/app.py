@@ -18,7 +18,7 @@ db = SQLAlchemy(app)
 #Adding tags
 tags = db.Table('tags',
     db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True),
-    db.Column('page_id', db.Integer, db.ForeignKey('page.id'), primary_key=True)
+    db.Column('venue', db.Integer, db.ForeignKey('venue.veuneName'), primary_key=True)
 )
 
 #Adding a spot to the database
@@ -52,8 +52,8 @@ class Venue(db.Model):
        return "<Venue: {}>".format(self.name)
     
     
-    class Tag(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
+class Tag(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
 
 
 @app.route('/', methods=['GET'])
