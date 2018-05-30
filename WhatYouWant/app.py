@@ -8,10 +8,10 @@ database_spot = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
 database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db"
 SQLALCHEMY_BINDS = {
-    'spot':        'mysqldb://localhost/spot',
-    'venue':        'mysqldb://localhost/venue'
+    'spot':        'mysqldb://localhost/db/spot',
+    'venue':        'mysqldb://localhost/db/venue'
 }
 db = SQLAlchemy(app)
 
@@ -46,7 +46,7 @@ class Venue(db.Model):
     venueYelp = db.Column(db.String(200), unique=True)
     venueStars =db.Column(db.Integer, nullable=True)
     tags = db.relationship('Tag', secondary=tags, lazy='subquery',
-        backref=db.backref('pages', lazy=True))
+        backref=db.backref('venue', lazy=True))
 
     def __repr__(self):
        return "<Venue: {}>".format(self.name)
