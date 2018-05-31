@@ -3,16 +3,9 @@ from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
-project_dir = os.path.dirname(os.path.abspath(__file__))
-database_spot = "sqlite:///{}".format(os.path.join(project_dir, "spot.db"))
-database_venue = "sqlite:///{}".format(os.path.join(project_dir, "venue.db"))
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db"
-SQLALCHEMY_BINDS = {
-    'spot':        'mysqldb://localhost/db/spot',
-    'venue':        'mysqldb://localhost/db/venue'
-}
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
 db = SQLAlchemy(app)
 
 #Adding tags
