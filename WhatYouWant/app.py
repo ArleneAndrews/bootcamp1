@@ -21,11 +21,6 @@ class Spot(db.Model):
     spotlat = db.Column(db.Float, unique=True, nullable=False)
     spotlong = db.Column(db.Float, unique=True,nullable=False)
 
-    def __init__(self, spotName, spotlat, spotlong):
-        self.spotName = spotName
-        self.spotlat = spotlat
-        self.spotlong = spotlong
-    
     def __repr__(self):
         return "<Spot: {}>".format(self.spotName) 
 
@@ -36,9 +31,9 @@ class Venue(db.Model):
     venueLocation = db.Column(db.String(80), unique=True, nullable=False)
     venuePhone = db.Column(db.Integer, unique=True, nullable=True)
     venueVisit = db.Column(db.Boolean, nullable=True)
-    venueYelp = db.Column(db.String(200), unique=True)
+    venueReview = db.Column(db.String(200), unique=True)
     venueStars =db.Column(db.Integer, nullable=True)
-    tags = db.relationship('Tag', secondary=tags, lazy='subquery',
+    tags = db.relationship('Tags', secondary=tags, lazy='subquery',
         backref=db.backref('venue', lazy=True))
 
     def __repr__(self):
