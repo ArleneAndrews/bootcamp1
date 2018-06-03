@@ -1,7 +1,5 @@
 import os
 from flask import Flask
-from flask.ext.script import Manager
-from flask.ext.migrate import Migrate, MigrateCommand
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
