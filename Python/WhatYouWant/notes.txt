@@ -20,3 +20,4 @@ https://www.codementor.io/garethdwyer/building-a-crud-application-with-flask-and
 https://stackoverflow.com/questions/46381128/building-progressive-web-apps-using-python-flask
 https://spreadsheetsolving.com/lunch-decision/
 https://blog.varonis.com/gdpr-requirements-list-in-plain-english/
+
