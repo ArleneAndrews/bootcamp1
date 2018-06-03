@@ -5,16 +5,39 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand, Manager
 from flask import Flask, render_template, url_for, request, redirect
 
+project_dir = //
+
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(python/whatyouwant, "project.db"))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
 db = SQLAlchemy(app)
 
-from models import db  # <-- this needs to be placed after app is created
-migrate = Migrate(app, db)
+#Adding a spot to the database
+class Spot(db.Model):
+    __bind_key__ = 'spot'
+    spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    spotlat = db.Column(db.Real, unique=True, nullable=False)
+    spotlong = db.Column(db.Real, unique=True,nullable=False)
 
-manager = Manager(app)
-manager.add_command('db', MigrateCommand) 
+    def __repr__(self):
+        return "<Spot: {}>".format(self.spotName) 
+
+#Adding a location for offline use 
+class Venue(db.Model):
+    __bind_key__ = 'venue'
+    veuneName = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    venueLocation = db.Column(db.String(80), unique=True, nullable=False)
+    venueLat = db.Column(db.Real, unique=True, nullable=False)
+    venueLong = db.Column(db.Real, unique=True,nullable=False)
+    venuePhone = db.Column(db.Integer, unique=True, nullable=True)
+    venueVisit = db.Column(db.Integer, nullable=True)
+    venueReview = db.Column(db.Blob, unique=True)
+    venueStars =db.Column(db.Integer, nullable=True)
+    tags = db.relationship('Tags', secondary=tags, lazy='subquery',
+        backref=db.backref('venue', lazy=True))
+
+    def __repr__(self):
+       return "<Venue: {}>".format(self.name)
 
 #Adding tags
 tags = db.Table('tags',
