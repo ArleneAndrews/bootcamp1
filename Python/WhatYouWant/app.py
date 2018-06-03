@@ -2,12 +2,12 @@ import os
 from flask import Flask
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate, MigrateCommand
+from flask_migrate import Migrate, MigrateCommand, Manager
 from flask import Flask, render_template, url_for, request, redirect
 
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(python/whatyouwant, "project.db"))
 db = SQLAlchemy(app)
 
 from models import db  # <-- this needs to be placed after app is created
