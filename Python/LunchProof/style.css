@@ -26,7 +26,8 @@
     margin-right: 20px;
     font:  bold 18px/30px sans-serif;
   }
-  
-  #button {
-    text-decoration: brown;
-  }
+  #myimage {
+    height: 200px;
+    width: 200px;
+}
+   
