@@ -25,3 +25,7 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+  .with-gap {
+     font:  bold 18px/30px sans-serif;
+     background-color: lightblue;
+  }
