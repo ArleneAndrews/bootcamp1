@@ -21,3 +21,4 @@ https://stackoverflow.com/questions/46381128/building-progressive-web-apps-using
 https://spreadsheetsolving.com/lunch-decision/
 https://blog.varonis.com/gdpr-requirements-list-in-plain-english/
 
+Proof of concept ongoing in LunchProof
