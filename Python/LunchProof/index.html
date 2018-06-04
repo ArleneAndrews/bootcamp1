@@ -9,29 +9,29 @@
     
 </head>
 <body>
-      <form action="#">
+      <form onsubmit="geoFindMe()">
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="distance" type="radio" value = "16" />
             <span>I have 10 minutes left of lunch</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" checked />
+            <input name="distance" type="radio" value = "15" checked />
             <span>I have a full lunch break</span>
           </label>
         </p>
         <p>
           <label>
-            <input class="with-gap" name="group1" type="radio"  />
+            <input class="with-gap" name="distance" type="radio" value = "14" />
             <span>I'm making plans</span>
           </label>
         </p>
-                </p>
+        <button type="submit"><img src="./button.png" alt="Submit"></button>
       </form>
-      <button type="submit"><img src="./button.png" alt="Submit"></button>
-   <div id ="display"></div>
+      
+   <div id ="out"></div>
 </body>
 
  <!-- thanks to http://blog.postmark.com/evolving-etiquette/how-to-set-a-table-informal/ for the background picture, and the information! -->  
