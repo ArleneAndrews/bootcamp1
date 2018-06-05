@@ -14,10 +14,10 @@ function geoFindMe() {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
   
-      output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+      //output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   
       var img = new Image();
-      img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom="+ distance + "&size=300x300&scale=2&sensor=false";
+      img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom="+ distance + "&size=200x200&scale=2&sensor=false";
   
       output.appendChild(img);
     }
