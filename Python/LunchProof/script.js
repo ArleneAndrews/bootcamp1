@@ -1,3 +1,6 @@
+document.getElementById("feedMe").addEventListener("click", geoFindMe);
+
+
 function geoFindMe() {
     var output = document.getElementById("out");
     const distance = document.getElementById("distance").value;

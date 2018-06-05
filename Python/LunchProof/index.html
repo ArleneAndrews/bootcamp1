@@ -4,35 +4,18 @@
     <title>LunchProof</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+   
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
-      <form onsubmit="geoFindMe()">
-        <p>
-          <label>
-            7<input name="distance" type="radio" value = "20" />
-            <span>I have 10 minutes left of lunch</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="distance" type="radio" value = "19" checked />
-            <span>I have a full lunch break</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="distance" type="radio" value = "18" />
-            <span>I'm making plans</span>
-          </label>
-        </p>
-        <button type="submit"><img src="./button.png" alt="Submit"></button>
-      </form>
-      
-   <div id ="out"></div>
+  
+  <div class="slidecontainer">
+    Time left for lunch: <input type="range" min="14" max="21" value="18" class="slider" id="distance"> </div>
+  <button><input type="image" id ="feedMe" src="button.png" alt="Submit"></button>
+  
+  <div id ="out"></div>
+  
+  <script type="text/javascript" src="script.js"></script>
 </body>
-
- <!-- thanks to http://blog.postmark.com/evolving-etiquette/how-to-set-a-table-informal/ for the background picture, and the information! -->  
 </html>
