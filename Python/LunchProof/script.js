@@ -1,4 +1,4 @@
-document.getElementById("feedMe").addEventListener("click", geoFindMe);
+document.getElementById("feedMe").addEventListener("click", geoFindMe());
 
 
 function geoFindMe() {
@@ -13,13 +13,15 @@ function geoFindMe() {
     function success(position) {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
+      
+      nearby();
   
-      //output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+      /* output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   
       var img = new Image();
       img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom="+ distance + "&size=200x200&scale=2&sensor=false";
   
-      output.appendChild(img);
+      output.appendChild(img);*/
     }
   
     function error() {
@@ -33,6 +35,7 @@ function geoFindMe() {
 
   //google place API key AIzaSyABQrtrls3Uqy1tHAbT4jepSdyLqoTNooM
   function nearby()
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABQrtrls3Uqy1tHAbT4jepSdyLqoTNooM&libraries=places&callback=initMap" async defer>
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
 
@@ -41,16 +44,16 @@ var service;
 var infowindow;
 
 function initialize() {
-  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+  var pyrmont = new google.maps.LatLng(latitude,longitude);
 
-  map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('out'), {
       center: pyrmont,
       zoom: 15
     });
 
   var request = {
     location: pyrmont,
-    radius: '500',
+    radius: distance,
     type: ['restaurant']
   };
 
