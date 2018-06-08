@@ -2,6 +2,7 @@ document.getElementById("feedMe").addEventListener("click", geoFindMe());
 
 
 function geoFindMe() {
+  
     var output = document.getElementById("out");
     const distance = document.getElementById("distance").value;
 
@@ -11,10 +12,12 @@ function geoFindMe() {
     }
   
     function success(position) {
+     
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
       
       function initMap() {
+        alert("WORKS!");
         var pyrmont = {lat: latitude, lng: longitude};
     
         map = new google.maps.Map(document.getElementById('out'), {
@@ -62,5 +65,4 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
-  //google place API key AIzaSyABQrtrls3Uqy1tHAbT4jepSdyLqoTNooM
  
