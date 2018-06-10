@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
+
 #Static file template
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))

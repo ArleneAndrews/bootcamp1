@@ -30,6 +30,6 @@ document.getElementById("save").addEventListener("click", addSpot);
   navigator.geolocation.getCurrentPosition(success, error);
 }
 
-function addSpot {
-    Alert("This will add the current location to the app. Remove it from this spot to be determined.")
+function addSpot() {
+    alert("This will add the current location to the app. Remove it from this spot to be determined.")
 }
