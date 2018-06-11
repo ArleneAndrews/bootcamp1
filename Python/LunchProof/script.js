@@ -1,3 +1,18 @@
+var MODULE = (function () {
+	var dotenv = {},
+	/* 	privateVariable = 1;
+
+	function privateMethod() {
+		// ...
+	}
+
+	my.moduleProperty = 1;
+	my.moduleMethod = function () {
+		// ...
+	}; */
+
+	return dotenv;
+}());
 document.getElementById("feedMe").addEventListener("click", geoFindMe());
 
 function geoFindMe() {
