@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="scripts/require.js"></script>
+    <script>require('dotenv').config()</script>
     <title>LunchProof</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -15,7 +17,7 @@
 <body>
   
   <div class="slidecontainer">
-    Travel range: <input type="range" min="100" max="20000" value="500" class="slider" id="distance"> </div>
+    Travel range (.5k/.3 miles to 50k/30 miles) <input type="range" min=".5" max="50" value="500" class="slider" id="distance"> </div>
   <button><input type="image" id ="feedMe" src="button.png" alt="Submit"></button>
   
   <div id ="out"></div>

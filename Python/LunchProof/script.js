@@ -1,6 +1,4 @@
-require('dotenv').config()
 document.getElementById("feedMe").addEventListener("click", geoFindMe());
-
 
 function geoFindMe() {
   
