@@ -1,18 +1,10 @@
-var MODULE = (function () {
-	var dotenv = {},
-	/* 	privateVariable = 1;
+var defer = require('config/defer').deferConfig;
 
-	function privateMethod() {
-		// ...
-	}
-
-	my.moduleProperty = 1;
-	my.moduleMethod = function () {
-		// ...
-	}; */
-
-	return dotenv;
-}());
+module.exports = {
+   KEY : defer(function ()  {
+    return this.key1+this.key2;
+  })
+} 
 document.getElementById("feedMe").addEventListener("click", geoFindMe());
 
 function geoFindMe() {
