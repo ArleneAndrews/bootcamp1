@@ -43,14 +43,14 @@ function geoFindMe() {
     var radius = far;
     var output = document.getElementById("out2");
     output.innerHTML = '<p>and radis is '+far+'km </p>';
-    var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
+    var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=secret";
     return fetch(places)
     .then(function(response) {
       return response.json();
     })
     .then(function(myJson) {
       var listing = myJson;
-      console.log(listing);
+      console.log(listings);
     })
   }
 
