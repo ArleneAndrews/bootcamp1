@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>(function dotenv() {
+  <!-- <script>(function dotenv() {
       // ... all vars and functions are in this scope only
       // still maintains access to all globals
     }());</script>
-    <script>require('dotenv').config()</script>
+    <script>require('dotenv').config()</script> -->
     <title>LunchProof</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel='prefetch' href= "process.env">
-    <script>
+    <!-- <link rel='prefetch' href= "process.env"> -->
+   <!--  <script>
       var KEY = process.env.key;
       alert(KEY);
-     </script>
+     </script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
 <body>
   
   <div class="slidecontainer">
-    Travel range (.5k/.3 miles to 50k/30 miles) <input type="range" min=".5" max="50" value="500" class="slider" id="distance"> </div>
+    Travel range (.5k/1650 feet to 50k/30 miles) <input type="range" min=".5" max="50" value="10" class="slider" id="distance" onchange="updateTextInput(this.value)"> 
+  </div>
   <button><input type="image" id ="feedMe" src="button.png" alt="Submit"></button>
+    <input type="text" id="textInput" value="10">
+    <!-- Want to put mile conversion here -->
   
   <div id ="out"></div>
   
- <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-  type="text/javascript"></script> -->
-  
-  <script src="https://maps.googleapis.com/maps/api/js?key=" + KEY + "&libraries=places&callback=initMap" async defer> 
-  </script>
   <script type="text/javascript" src="script.js"></script>
   </script>
 
