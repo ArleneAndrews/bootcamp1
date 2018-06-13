@@ -9,10 +9,9 @@ function updateTextInput(val) {
   document.getElementById('textInput').value=val; 
   }
 
-document.getElementById("feedMe").addEventListener("click", geoFindMe());
+document.getElementById("feedMe").addEventListener("click", geoFindMe);
 
 function geoFindMe() {
-  
     var output = document.getElementById("out");
     var distance = document.getElementById("distance").value;
 
@@ -25,7 +24,7 @@ function geoFindMe() {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
       output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-      initMap();
+      findSpots();
     }
       
     function error() {
@@ -37,7 +36,7 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
-  function initMap() {
+  function findSpots() {
     alert("WORKS!");
     var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+distance+"&types=restaurant&key=supersecret"
     console.log(places);
