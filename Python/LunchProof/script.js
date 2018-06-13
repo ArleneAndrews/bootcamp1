@@ -24,7 +24,7 @@ function geoFindMe() {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
       output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-      findSpots();
+      findSpots(latitude,longitude,distance);
     }
       
     function error() {
@@ -36,9 +36,14 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
-  function findSpots() {
-    alert("WORKS!");
-    var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+distance+"&types=restaurant&key=supersecret"
+  function findSpots(lat, long, far) {
+    var latitude = lat;
+    console.log(latitude);
+    var longitude = long;
+    var radius = far;
+    var output = document.getElementById("out2");
+    output.innerHTML = '<p>and radis is '+far+'km </p>';
+    var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=supersecret"
     console.log(places);
   }
 
