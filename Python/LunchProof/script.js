@@ -50,7 +50,30 @@ function geoFindMe() {
     })
     .then(function(myJson) {
       var listing = myJson;
-      console.log(listings);
+      console.log(listing);
+      
+      var lists = JSON.parse(listing);
+
+      for(var i = 0, l = lists.length; i < l; i++) {
+          var spot = lists[i];
+          var div = document.createElement('div');
+          div.innerHTML = 'Hello ' + spot.name + ' your Id is: ' + spot.addy + 'and your message is: ' + spot.opening_hours.open_now ;
+          document.body.appendChild(div);
+      }
+     
+    
+    /*   var name = listing.name;
+     document.getElementById("name").innerHTML = name;
+   
+     var addy = listing.vicinity;
+     document.getElementById("addy").innerHTML = addy;
+
+     var open =listing.opening_hours.open_now
+       if(open== true){
+        document.getElementById("open").innerHTML = Yes;  
+       } */
+
+      //"name", "opening_hours"."open_now" = true, "vicinity"
     })
   }
 
