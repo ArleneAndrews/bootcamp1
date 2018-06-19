@@ -44,7 +44,7 @@ function geoFindMe() {
     var output = document.getElementById("out2");
     output.innerHTML = '<p>and radis is '+far+'km </p>';
     var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=secret";
-    return fetch(places)
+    return fetch(places, {mode: 'no-cors'})
     .then(function(response) {
       return response.json();
     })
@@ -60,20 +60,6 @@ function geoFindMe() {
           div.innerHTML = 'Hello ' + spot.name + ' your Id is: ' + spot.addy + 'and your message is: ' + spot.opening_hours.open_now ;
           document.body.appendChild(div);
       }
-     
-    
-    /*   var name = listing.name;
-     document.getElementById("name").innerHTML = name;
-   
-     var addy = listing.vicinity;
-     document.getElementById("addy").innerHTML = addy;
-
-     var open =listing.opening_hours.open_now
-       if(open== true){
-        document.getElementById("open").innerHTML = Yes;  
-       } */
-
-      //"name", "opening_hours"."open_now" = true, "vicinity"
     })
   }
 
