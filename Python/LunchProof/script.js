@@ -42,7 +42,8 @@ function geoFindMe() {
     var longitude = long;
     var radius = far;
     var output = document.getElementById("out2");
-    output.innerHTML = '<p>and radis is '+far+'km </p>';
+    var miles = (far * 0.00062137119223733).toFixed(2)
+    output.innerHTML = '<p>and radis is '+ miles+' miles </p>';
     var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=secret";
     return fetch(places, { mode: 'no-cors'})
     .then(function(response) {
@@ -52,12 +53,12 @@ function geoFindMe() {
       var listing = myJson;
       console.log(listing);
   
-      var lists = JSON.parse(listing);
+      //var lists = JSON.parse(listing);
   
-      for(var i = 0, l = lists.length; i < l; i++) {
-        var spot = lists[i];
+      for(var i = 0, l = listing.length; i < l; i++) {
+        var spot = listing[i];
         var div = document.createElement('div');
-        div.innerHTML = 'Hello ' + spot.name + ' your Id is: ' + spot.addy + 'and your message is: ' + spot.opening_hours.open_now ;
+        div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now ;
         document.body.appendChild(div);
       }
   })
