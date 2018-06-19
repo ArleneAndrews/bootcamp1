@@ -44,23 +44,21 @@ function geoFindMe() {
     var output = document.getElementById("out2");
     output.innerHTML = '<p>and radis is '+far+'km </p>';
     var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=secret";
-    return fetch(places, {mode: 'no-cors'})
+    return fetch(places, { mode: 'no-cors'})
     .then(function(response) {
-      return response.json();
+      return response.json()
     })
     .then(function(myJson) {
       var listing = myJson;
       console.log(listing);
-      
+  
       var lists = JSON.parse(listing);
-
+  
       for(var i = 0, l = lists.length; i < l; i++) {
-          var spot = lists[i];
-          var div = document.createElement('div');
-          div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open Now? ' + spot.opening_hours.open_now ;
-          document.body.appendChild(div);
+        var spot = lists[i];
+        var div = document.createElement('div');
+        div.innerHTML = 'Hello ' + spot.name + ' your Id is: ' + spot.addy + 'and your message is: ' + spot.opening_hours.open_now ;
+        document.body.appendChild(div);
       }
-    })
-  }
-
- 
+  })
+} 
