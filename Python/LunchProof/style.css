@@ -52,4 +52,10 @@ html, body {
   background: #4CAF50;
   cursor: pointer;
 }
+
+#feedMe {
+  width: 25px;
+  height: 25px;
+  border: 0;
+}
    
