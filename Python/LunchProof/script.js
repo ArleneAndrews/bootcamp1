@@ -1,10 +1,5 @@
-/* var defer = require('config/defer').deferConfig;
+const username = event.requestContext.authorizer.claims['cognito:username'];
 
-module.exports = {
-   KEY : defer(function ()  {
-    return this.key1+this.key2;
-  })
-}  */
 function updateTextInput(val) {
   document.getElementById('textInput').value=val; 
   }
@@ -38,11 +33,11 @@ function geoFindMe() {
 
   function findSpots(lat, long, far) {
     var latitude = lat;
-    console.log(latitude);
     var longitude = long;
     var radius = far;
     var output = document.getElementById("out2");
     var miles = (far * 0.00062137119223733).toFixed(2)
+    const username = event.requestContext.authorizer.claims['cognito:username'];
     output.innerHTML = '<p>and radis is '+ miles+' miles </p>';
     var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key=secret";
     return fetch(places, { mode: 'no-cors'})
