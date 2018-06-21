@@ -1,16 +1,17 @@
 import os
 from flask import Flask
-from sqlalchemy.orm import relationship
-from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy.orm import relationship
+#from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, url_for, request, redirect
 
 
 #Static file template
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
-db = SQLAlchemy(app)
+"""app.config['PLACES'] = True
+#app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
+#db = SQLAlchemy(app)
 
-#Adding a spot to the database
+ #Adding a spot to the database
 class Spot(db.Model):
     __bind_key__ = 'spot'
     spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
@@ -45,10 +46,10 @@ tags = db.Table('tags',
     
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-
+ 
 
 @app.route('/', methods=['GET'])
-def home():
+ def home():
     if request.form:
         spot = Spot(spotName=request.form.get("spotName"))
         db.session.add(spot)
@@ -61,6 +62,7 @@ def index():
 @app.route('/sw.js', methods=['GET'])
 def sw():
     return app.send_static_file('sw.js')
-
+ """
 if __name__=='__main__':
+    app.secret_key = 'super secret key'
     app.run(debug=True)
