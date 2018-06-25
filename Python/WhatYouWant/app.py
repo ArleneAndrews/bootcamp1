@@ -7,8 +7,8 @@ from flask import Flask, render_template, url_for, request, redirect
 
 #Static file template
 app = Flask(__name__)
-app.config['PLACES'] = supersecret_key
-"""
+"""app.config['PLACES'] = supersecret_key
+
 #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
 #db = SQLAlchemy(app)
 
