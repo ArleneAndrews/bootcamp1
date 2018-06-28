@@ -105,3 +105,4 @@ ENV/
 Python/LunchProof/process.env
 Python/LunchProof/config/sample.js
 Python/LunchProof/key.env
+Python/Links/pyvenv.cfg
