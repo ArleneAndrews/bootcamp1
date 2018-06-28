@@ -31,7 +31,7 @@ def _event_handler(event_type, slack_event):
         Response object with 200 - ok or 500 - No Event Handler error
 
     """
-    team_id = slack_event["team_id"]
+    """ team_id = slack_event["team_id"]
     # ================ Team Join Events =============== #
     # When the user first joins a team, the type of event will be team_join
     if event_type == "team_join":
@@ -72,12 +72,12 @@ def _event_handler(event_type, slack_event):
     # If the event_type does not have a handler
     message = "You have not added an event handler for the %s" % event_type
     # Return a helpful error message
-    return make_response(message, 200, {"X-Slack-No-Retry": 1})
+    return make_response(message, 200, {"X-Slack-No-Retry": 1}) """
 
-
+""" 
 @app.route("/install", methods=["GET"])
 def pre_install():
-    """This route renders the installation page with 'Add to Slack' button."""
+    This route renders the installation page with 'Add to Slack' button.
     # Since we've set the client ID and scope on our Bot object, we can change
     # them more easily while we're developing our app.
     client_id = pyBot.oauth["client_id"]
@@ -85,22 +85,19 @@ def pre_install():
     # Our template is using the Jinja templating language to dynamically pass
     # our client id and scope
     return render_template("install.html", client_id=client_id, scope=scope)
+ """
 
-
-@app.route("/thanks", methods=["GET", "POST"])
+""" @app.route("/thanks", methods=["GET", "POST"])
 def thanks():
     """
-    This route is called by Slack after the user installs our app. It will
-    exchange the temporary authorization code Slack sends for an OAuth token
-    which we'll save on the bot object to use later.
-    To let the user know what's happened it will also render a thank you page.
-    """
+""" exit """
+"""
     # Let's grab that temporary authorization code Slack's sent us from
     # the request's parameters.
     code_arg = request.args.get('code')
     # The bot's auth method to handles exchanging the code for an OAuth token
     pyBot.auth(code_arg)
-    return render_template("thanks.html")
+    return render_template("thanks.html") """
 
 
 @app.route("/listening", methods=["GET", "POST"])
