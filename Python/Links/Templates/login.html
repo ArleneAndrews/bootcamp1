@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title> Flask Intro- Login</title>
+        <title>Flask Intro - Login</title>
         <meta name='viewport' content='width=device-width, inital scale =1.0'>
     </head>
     <body>
@@ -9,8 +8,8 @@
             <h1>Please log in</h1>
             <br>
             <form action="" method='post'>
-                <input type='text' placeholder='User name' name='username' value={{" request.form.username }}">
-                <input type='password' placeholder='Password' name='password' value={{" request.form.password }}">
+                <input type='text' placeholder='User name' name='username' value="{{ request.form.username }}">
+                <input type='password' placeholder='Password' name='password' value="{{ request.form.password }}">
                 <input type ='submit' value='Login'>
             </form>
             {% if error %}
