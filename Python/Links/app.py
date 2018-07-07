@@ -1,5 +1,5 @@
 # import Flask class from Flask module and template tool
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, session
 
 # create the application object
 app = Flask(__name__)
