@@ -30,7 +30,7 @@ def login():
 def logout():
     session.pop('logged_,in', None)
     return redirect (url_for('welcome'))
-     
+   #lesson 3 -332  
 
 #start the server with 'run()' in debug mode
 if __name__ =='__main__':
