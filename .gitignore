@@ -106,3 +106,6 @@ Python/LunchProof/process.env
 Python/LunchProof/config/sample.js
 Python/LunchProof/key.env
 Python/Links/pyvenv.cfg
+Python/Links/Scripts/pip3.exe
+Python/Links/Scripts/pip.exe
+Python/Links/Scripts/pip3.6.exe
