@@ -1,5 +1,7 @@
 # import Flask class from Flask module and template tool, plus others
 from flask import Flask, render_template, request, url_for, redirect, session, flash
+# functools
+from functools import wraps
 
 # create the application object
 app = Flask(__name__)
@@ -7,8 +9,20 @@ app = Flask(__name__)
 #temp secret key
 app_secret_key  = 'dragon'
 
+# login required decorator
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('You need to login first.')
+            return redirect(url_for('login'))
+    return wrap
+
 # decorators to link funtion to URL, then return a string
 @app.route('/')
+@login_required
 def home():
     # return "Hello, Sunshine!"
     return render_template('index.html')
@@ -33,6 +47,7 @@ def login():
 
 # route for log out page, basic auth
 @app.route('/logout')
+@login_required
 def logout():
     session.pop('logged_,in', None)
     flash('You are logged out')
