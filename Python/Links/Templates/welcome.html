@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Flask Intro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-</head>
-<body>
-    <div class="container">
-        <H1>Welcome to FLASK!</H1>
-        <br>
-        <p>Click <a href='/'>here</a> to go home.</p>
-        {% for message in get_flashed_messages() %}
-            {{ message }}
-        {% endfor %}    
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+
+<H1>Welcome to FLASK!</H1>
+<br>
+<p>Click <a href='/'>here</a> to go home.</p>
+
+{% endblock %}

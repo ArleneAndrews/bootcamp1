@@ -1,24 +1,14 @@
-<html>
-    <head>
-        <title>Flask Intro - Login</title>
-        <meta name='viewport' content='width=device-width, inital scale =1.0'>
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    </head>
-    <body>
-        <div class='container'>
-            <h1>Please log in</h1>
-            <br>
-            <form action="" method='post'>
-                <input type='text' placeholder='User name' name='username' value="{{ request.form.username }}">
-                <input type='password' placeholder='Password' name='password' value="{{ request.form.password }}">
-                <input type ='submit' value='Login'>
-            </form>
-            {% if error %}
-                <p class='error'>Error: {{ error }}</p>
-            {% endif %}
-            {% for message in get_flashed_messages() %}
-                {{ message }}
-            {% endfor %}
-        </div>
-    </body>
-</html>
+>{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to Flask!</h1>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+<h1>Please log in</h1>
+<br>
+<form action="" method='post'>
+    <input type='text' placeholder='User name' name='username' value="{{ request.form.username }}">
+    <input type='password' placeholder='Password' name='password' value="{{ request.form.password }}">
+    <input type ='submit' value='Login'>
+</form>
+{% endblock %}
