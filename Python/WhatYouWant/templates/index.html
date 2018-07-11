@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>What You Want</title>
-    <script>require('dotenv').config()</script>
-    <link rel="stylesheet" type="text/css" href="../static/css/page.css">
-    <script type="text/javascript" src="../static/js/geo.js"></script>
-</head>
-<body>
-    <h1>My Location</h1>
-    <button id ="here">Click me</button> 
-    <button id ="save">Save this spot</button>
-   <div id ="display"></div>
-</body>
+{% extends "base.html" %}
+{% block content %}
+<script type="text/javascript" src="../static/js/geo.js"></script>
+<h1>My Location</h1>
+<button id ="here">Click me</button> 
+<button id ="save">Save this spot</button>
+<div id ="display"></div>
 
     <!-- <script type="text/javascript" src="../static/js/app.js"></script>
     <script type="text/javascript">
@@ -27,4 +20,4 @@
             });
         }
     </script> -->
-</html>
+{% endblock %}
