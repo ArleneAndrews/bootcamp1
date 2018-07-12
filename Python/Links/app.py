@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, url_for, redirect, session, flash, g
 # functools
 from functools import wraps
+# import the database
 import sqlite3
 
 
@@ -10,6 +11,7 @@ app = Flask(__name__)
 
 #temp secret key
 app.secret_key = 'dragon'
+# add the database (singular)
 app.database = "project.db"
 
 # login required decorator
