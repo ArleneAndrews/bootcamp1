@@ -31,7 +31,7 @@ def login_required(f):
 def home():
     # return "Hello, Sunshine!"
     g.db = connect_db()
-    cur = g.db.execute('select * from project')
+    cur = g.db.execute('select * from posts')
     posts = [dict(title=row[0], description=row[1])for row in cur.fetchall()]
     g.db.close()
     return render_template('index.html', posts=posts)
