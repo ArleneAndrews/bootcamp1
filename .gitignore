@@ -109,3 +109,9 @@ Python/Links/pyvenv.cfg
 Python/Links/Scripts/pip3.exe
 Python/Links/Scripts/pip.exe
 Python/Links/Scripts/pip3.6.exe
+Python/Links/Scripts/ipython3.exe
+Python/Links/Scripts/iptest.exe
+Python/Links/Scripts/iptest3.exe
+Python/Links/Scripts/ipython.exe
+Python/Links/Scripts/pygmentize.exe
+Python/Links/share/man/man1/ipython.1.gz

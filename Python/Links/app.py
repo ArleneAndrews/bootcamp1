@@ -1,13 +1,16 @@
 # import Flask class from Flask module and template tool, plus others
-from flask import Flask, render_template, request, url_for, redirect, session, flash
+from flask import Flask, render_template, request, url_for, redirect, session, flash, g
 # functools
 from functools import wraps
+import sqlite3
+
 
 # create the application object
 app = Flask(__name__)
 
 #temp secret key
 app.secret_key = 'dragon'
+app.database = "project.db"
 
 # login required decorator
 def login_required(f):
@@ -25,7 +28,11 @@ def login_required(f):
 @login_required
 def home():
     # return "Hello, Sunshine!"
-    return render_template('index.html')
+    g.db = connect_db()
+    cur = g.db.execute('select * from project')
+    posts = [dict(title=row[0], description=row[1])for row in cur.fetchall()]
+    g.db.close()
+    return render_template('index.html', posts=posts)
 
 # render a template
 @app.route('/welcome')
@@ -52,6 +59,9 @@ def logout():
     session.pop('logged_,in', None)
     flash('You are logged out')
     return redirect (url_for('welcome'))
+
+def connect_db():
+    return sqlite3.connect(app.database)
   
 
 #start the server with 'run()' in debug mode
