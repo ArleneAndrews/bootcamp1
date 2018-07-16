@@ -17,8 +17,24 @@ class FlaskTestCase(unittest.TestCase):
         self.assertTrue(b"Please log in" in response.data)  
 
     # Login - Correct credintials
-    
-    # Login - Wrong credintials  
+    def test_login_proper_creds(self):
+        tester = app.test_client(self)
+        response = tester.post(
+        '/login', 
+        data=dict(username='admin', password='admin',
+        follow_redirects=True)
+        )
+        self.assertTrue(b"You are logged in" in response.data)  
+
+    # Login - Wrong credintials
+    def test_login_wrong_creds(self):
+        tester = app.test_client(self)
+        response = tester.post(
+        '/login', 
+        data=dict(username='cat', password='kitten', 
+        follow_redirects=True)
+        )
+        self.assertTrue(b"Invalid Credentials. Are you sure you know who you are?" in response.data)   
 
     # Logout
 
