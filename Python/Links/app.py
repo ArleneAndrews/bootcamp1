@@ -61,7 +61,7 @@ def login():
 @app.route('/logout')
 @login_required
 def logout():
-    session.pop('logged_,in', None)
+    session.pop('logged_in', None)
     flash('You are logged out')
     return redirect (url_for('welcome'))
 
