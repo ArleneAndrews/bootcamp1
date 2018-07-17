@@ -35,7 +35,7 @@ def home():
     posts =[]
     
     for row in cur.fetchall():
-        posts.append = (dict(title=row[0], description=row[1]))
+        posts.append(dict(title=row[0], description=row[1]))
     g.db.close()
     return render_template('index.html', posts=posts)
 
