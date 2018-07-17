@@ -1,16 +1,65 @@
-import os
-from flask import Flask
-#from sqlalchemy.orm import relationship
-#from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, request, url_for, redirect, session, flash, g
+import sqlite3
+from functools import wraps
 
-
-#Static file template
 app = Flask(__name__)
+
+# login required decorator
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('You need to login first.')
+            return redirect(url_for('login'))
+    return wrap
+
+# decorators to link funtion to URL, then return a string
+@app.route('/')
+@login_required
+def home():
+    # return "Hello, Sunshine!"
+    g.db = connect_db()
+    cur = g.db.execute('select * from posts')
+    posts =[]
+    
+    for row in cur.fetchall():
+        posts.append(dict(title=row[0], description=row[1]))
+    g.db.close()
+    return render_template('index.html', posts=posts)
+
+# render a template
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
+
+# route for login page logic
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] !='admin':
+            error = "Invalid Credentials. Are you sure you know who you are?"
+        else:
+            session['logged_in'] = True
+            flash('You are logged in')
+            return redirect(url_for('home'))
+    return render_template('login.html', error=error)
+
+# route for log out page, basic auth
+@app.route('/logout')
+@login_required
+def logout():
+    session.pop('logged_in', None)
+    flash('You are logged out')
+    return redirect (url_for('welcome'))
+
+def connect_db():
+    return sqlite3.connect(app.database)
+
 """app.config['PLACES'] = supersecret_key
 
-#app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(os.path.join(project_dir, "project.db"))
-#db = SQLAlchemy(app)
 
  #Adding a spot to the database
 class Spot(db.Model):
