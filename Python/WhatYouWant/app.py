@@ -44,8 +44,8 @@ def welcome():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] !='admin':
-            error = "Invalid Credentials. Are you sure you know who you are?"
+        if request.form['username'] != 'Slack'  or request.form['password'] !='Links':
+            error = "You still haven't found what you're looking for?"
         else:
             session['logged_in'] = True
             flash('You are logged in')
