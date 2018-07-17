@@ -4,6 +4,11 @@ from functools import wraps
 
 app = Flask(__name__)
 
+#temp secret key
+app.secret_key = 'dragon'
+# add the database (singular)
+app.database = "project.db"
+
 # login required decorator
 def login_required(f):
     @wraps(f)
