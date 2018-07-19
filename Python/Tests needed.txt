@@ -1,0 +1,23 @@
+Lunch proof:
+Location is retrieved
+Slider is accurate
+Moving slider changes both miles and meters
+Miles and meters conversions are accurate
+typing in meters moves Slider
+typing in miles moves Slider
+button sends request
+
+button gets data from database OR APIs
+dupliate entries do not show
+information
+open is accurate
+address is accurate
+data is accurate for Location
+location show up on map
+
+Whatyouwant
+Lunchproof plus:
+Button saves location to correct table
+location matches saved spot shows spot name
+
+
