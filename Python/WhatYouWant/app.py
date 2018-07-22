@@ -26,13 +26,13 @@ def login_required(f):
 def home():
     # return "Hello, Sunshine!"
     g.db = connect_db()
-    cur = g.db.execute('select * from posts')
-    posts =[]
+    cur = g.db.execute('select * from spots')
+    spots =[]
     
     for row in cur.fetchall():
-        posts.append(dict(title=row[0], description=row[1]))
+        spots.append(dict(title=row[0], description=row[1]))
     g.db.close()
-    return render_template('index.html', posts=posts)
+    return render_template('index.html', spots=spots)
 
 # render a template
 @app.route('/welcome')
