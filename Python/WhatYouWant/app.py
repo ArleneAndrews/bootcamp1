@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 #temp secret key
 app.secret_key = 'dragon'
-# add the database (singular)
+# add the database 
 app.database = "project.db"
 
 # login required decorator
@@ -26,13 +26,13 @@ def login_required(f):
 def home():
     # return "Hello, Sunshine!"
     g.db = connect_db()
-    cur = g.db.execute('select * from posts')
-    posts =[]
+    cur = g.db.execute('select * from spot')
+    spot =[]
     
     for row in cur.fetchall():
-        posts.append(dict(title=row[0], description=row[1]))
+        spot.append(dict(title=row[0], description=row[1]))
     g.db.close()
-    return render_template('index.html', posts=posts)
+    return render_template('index.html', spot=spot)
 
 # render a template
 @app.route('/welcome')
@@ -66,7 +66,7 @@ def connect_db():
 """app.config['PLACES'] = supersecret_key
 
 
- #Adding a spot to the database
+#Adding a spot to the database
 class Spot(db.Model):
     __bind_key__ = 'spot'
     spotName =db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
