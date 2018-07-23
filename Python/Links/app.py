@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 #temp secret key
 app.secret_key = 'dragon'
-# add the database (singular)
+# add the database
 app.database = "project.db"
 
 # login required decorator
