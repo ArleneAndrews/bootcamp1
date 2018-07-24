@@ -1,4 +1,4 @@
-const username = event.requestContext.authorizer.claims['cognito:username'];
+// const username = event.requestContext.authorizer.claims['cognito:username'];
 
 function updateTextInput(val) {
   document.getElementById('textInput').value=val; 
