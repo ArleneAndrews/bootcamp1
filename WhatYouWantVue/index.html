@@ -6,8 +6,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 </head>
@@ -17,6 +15,9 @@
     <div id="app">
         <div class="slidecontainer">
             Travel range (.5k/1650 feet to 50k/30 miles) <input type="range" min="500" max="50000" value="1700" class="slider" id="distance" onchange="updateTextInput(this.value)"> 
+            <input type="text" id="textInputkm" value="0.5">km
+            <input type="text" id="textInputm" value= "1700*0.00062137119223733">miles
+    
           </div>
     </div>
 
