@@ -12,6 +12,14 @@
     
 </head>
 <body>
+        <input type="radio" id="one" value="km" v-model="picked">
+        <label for="one">km</label>
+        
+        <input type="radio" id="two" value="miles" v-model="picked">
+        <label for="two">miles</label>
+        <br>
+        <span>Units: {{ picked }}</span>
+            
     <div id="app">
         <div class="slidecontainer">
             Travel range (.5k/1650 feet to 50k/30 miles) <input type="range" min="500" max="50000" value="1700" class="slider" id="distance" onchange="updateTextInput(this.value)"> 

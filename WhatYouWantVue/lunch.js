@@ -25,3 +25,4 @@ function updateTextInputkm(val) {
 function updateTextInputm(val) {
   document.getElementById('textInputm').value=val; 
   }
+
