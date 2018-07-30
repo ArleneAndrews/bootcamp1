@@ -12,15 +12,16 @@ box.onkeyup = function () {
 //Radius setting
 function territory(far) {
   var far = far;
-  var unit = document.getElementById('group1');
-  if (unit != "km") {
+  var unit =  document.getElementById("group1");
+  console.log(unit.value);
+  /* if (unit == "miles") {
     var output = document.getElementById("out2");
     var miles = (far * 0.00062137119223733).toFixed(2)
     output.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
   }
   var output = document.getElementById("out2");
   var kms = (far / 1000).toFixed(2)
-  output.innerHTML = '<p>Radius is ' + kms + ' km </p>';
+  output.innerHTML = '<p>Radius is ' + kms + ' km </p>'; */
 }
 
 //finds location
@@ -40,11 +41,11 @@ function geoFindMe() {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
+  }
     if (skeleton == "") {
       findMap(latitude, longitude, distance);
     }
-    findSpots(latitude, longitude, distance);
+   
 
 
     function error() {
@@ -63,7 +64,7 @@ function geoFindMe() {
     var output = document.getElementById("out2");
 
     territory(radius);
-    /*  var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key="+key;
+      var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key="+key;
     return fetch(places, { mode: 'no-cors'})
     .then(function(response) {
       return response.json()
@@ -78,9 +79,9 @@ function geoFindMe() {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now ;
         document.body.appendChild(div);
       }
-  } )*/
+  } )
   }
-}
+
 
 function findMap(lat, long, far) {
   var lat = lat;
