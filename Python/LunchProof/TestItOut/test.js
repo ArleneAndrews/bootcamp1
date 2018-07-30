@@ -28,7 +28,6 @@ function territory() {
 }
 
 //finds location
-console.log()
 document.getElementById("options").addEventListener("click", findMap);
 document.getElementById("feedMe").addEventListener("click", findSpots);
 
@@ -88,9 +87,11 @@ function findSpots() {
 
 
 function findMap() {
-  geoFindMe();
   var output = document.getElementById("out2");
   var img = new Image();
+  
+  geoFindMe()
+  .then
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=300x300&sensor=false";
 
   output.appendChild(img);
