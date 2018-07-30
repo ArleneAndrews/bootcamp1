@@ -1,5 +1,6 @@
 //Globals
-var far = document.getElementById("distance").value
+var key = document.getElementById("skeleton").value;
+var far = document.getElementById("distance").value;
 var lat;
 var long;
 
@@ -27,10 +28,12 @@ function territory() {
 }
 
 //finds location
+console.log()
 document.getElementById("options").addEventListener("click", findMap);
 document.getElementById("feedMe").addEventListener("click", findSpots);
 
 function geoFindMe() {
+  console.log(key);
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -54,8 +57,9 @@ function geoFindMe() {
 }
 
 function findSpots() {
-  if (document.getElementById("skeleton").value == "") {
-    findMap();
+  if (key == "") {
+    findMap()
+    return;
   }
   geoFindMe();
   territory();
