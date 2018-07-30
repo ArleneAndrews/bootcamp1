@@ -9,19 +9,19 @@ box.onkeyup = function () {
   slider.value = box.value;
 }
 
+var far = document.getElementById("distance").value
+
 //Radius setting
-function territory(far) {
-  var far = far;
-  var unit =  document.getElementById("group1");
-  console.log(unit.value);
-  /* if (unit == "miles") {
-    var output = document.getElementById("out2");
+function territory() {
+  var output2 = document.getElementById("out2");
+  var unit = document.querySelector('input[name="group1"]:checked').value;
+  console.log(unit);
+  if (unit === "miles") {
     var miles = (far * 0.00062137119223733).toFixed(2)
-    output.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
+    output2.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
   }
-  var output = document.getElementById("out2");
   var kms = (far / 1000).toFixed(2)
-  output.innerHTML = '<p>Radius is ' + kms + ' km </p>'; */
+  output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
 }
 
 //finds location
@@ -30,7 +30,6 @@ document.getElementById("feedMe").addEventListener("click", geoFindMe);
 
 function geoFindMe() {
   var output = document.getElementById("out");
-  var distance = document.getElementById("distance").value;
 
   if (!navigator.geolocation) {
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -42,53 +41,56 @@ function geoFindMe() {
     var longitude = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
   }
-    if (skeleton == "") {
-      findMap(latitude, longitude, distance);
-    }
-   
+  if (skeleton == "") {
+    var lat = lat;
+    var long = long;
+    var output = document.getElementById("out2");
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
-
-    function error() {
-      output.innerHTML = "Unable to retrieve your location";
-    }
-
-    output.innerHTML = "<p>Locating…</p>";
-
-    navigator.geolocation.getCurrentPosition(success, error);
+    output.appendChild(img);;
   }
 
-  function findSpots(lat, long, far) {
-    var latitude = lat;
-    var longitude = long;
-    var radius = far;
-    var output = document.getElementById("out2");
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
 
-    territory(radius);
-      var places ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+"&types=restaurant&key="+key;
-    return fetch(places, { mode: 'no-cors'})
-    .then(function(response) {
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+
+function findSpots(lat, long, far) {
+  var latitude = lat;
+  var longitude = long;
+  var output = document.getElementById("out2");
+  territory();
+  var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude + "," + longitude + "&radius=" + far + "&types=restaurant&key=" + key;
+  return fetch(places, {
+      mode: 'no-cors'
+    })
+    .then(function (response) {
       return response.json()
     })
-    .then(function(myJson) {
+    .then(function (myJson) {
       var listing = myJson;
       console.log(listing);
-  
-      for(var i = 0, l = listing.length; i < l; i++) {
+
+      for (var i = 0, l = listing.length; i < l; i++) {
         var spot = listing[i];
         var div = document.createElement('div');
-        div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now ;
+        div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-  } )
-  }
+    })
+}
 
 
-function findMap(lat, long, far) {
+function findMap(lat, long) {
+  geoFindMe();
   var lat = lat;
   var long = long;
-  var radius = far;
   var output = document.getElementById("out2");
-  territory(radius);
   var img = new Image();
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=300x300&sensor=false";
 
