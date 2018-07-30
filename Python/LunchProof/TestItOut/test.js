@@ -1,3 +1,8 @@
+//Globals
+var far = document.getElementById("distance").value
+var lat;
+var long;
+
 //slider and box match
 var slider = document.getElementById('distance');
 var box = document.getElementById("box");
@@ -9,13 +14,10 @@ box.onkeyup = function () {
   slider.value = box.value;
 }
 
-var far = document.getElementById("distance").value
-
 //Radius setting
 function territory() {
   var output2 = document.getElementById("out2");
   var unit = document.querySelector('input[name="group1"]:checked').value;
-  console.log(unit);
   if (unit === "miles") {
     var miles = (far * 0.00062137119223733).toFixed(2)
     output2.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
@@ -26,7 +28,7 @@ function territory() {
 
 //finds location
 document.getElementById("options").addEventListener("click", findMap);
-document.getElementById("feedMe").addEventListener("click", geoFindMe);
+document.getElementById("feedMe").addEventListener("click", findSpots);
 
 function geoFindMe() {
   var output = document.getElementById("out");
@@ -37,35 +39,30 @@ function geoFindMe() {
   }
 
   function success(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-  }
-  if (skeleton == "") {
-    var lat = lat;
-    var long = long;
-    var output = document.getElementById("out2");
-    var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    output.appendChild(img);;
-  }
-
-  function error() {
-    output.innerHTML = "Unable to retrieve your location";
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + long + '°</p>';
   }
 
   output.innerHTML = "<p>Locating…</p>";
 
   navigator.geolocation.getCurrentPosition(success, error);
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
 }
 
-function findSpots(lat, long, far) {
-  var latitude = lat;
-  var longitude = long;
-  var output = document.getElementById("out2");
+function findSpots() {
+  if (document.getElementById("skeleton").value == "") {
+    findMap();
+  }
+  geoFindMe();
   territory();
-  var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude + "," + longitude + "&radius=" + far + "&types=restaurant&key=" + key;
+
+  var output = document.getElementById("out2");
+  output.innerHTML = "<p>Works this far!</p>";
+  /*var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=" + far + "&types=restaurant&key=" + key;
   return fetch(places, {
       mode: 'no-cors'
     })
@@ -82,14 +79,12 @@ function findSpots(lat, long, far) {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-    })
+    }) */
 }
 
 
-function findMap(lat, long) {
+function findMap() {
   geoFindMe();
-  var lat = lat;
-  var long = long;
   var output = document.getElementById("out2");
   var img = new Image();
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=300x300&sensor=false";
