@@ -1,7 +1,5 @@
 //Globals
 var key = document.getElementById("skeleton").value;
-var far = document.getElementById("distance").value;
-
 
 //slider and box match
 var slider = document.getElementById('distance');
@@ -18,6 +16,18 @@ box.onkeyup = function () {
 document.getElementById("options").addEventListener("click", findMap);
 document.getElementById("feedMe").addEventListener("click", findSpots);
 
+//Radius setting
+function territory() {
+  var output2 = document.getElementById("out2");
+  var unit = document.querySelector('input[name="group1"]:checked').value;
+  if (unit === "miles") {
+    var miles = (far * 0.00062137119223733).toFixed(2)
+    output2.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
+  }
+  var kms = (far / 1000).toFixed(2)
+  output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
+}
+
 function geoFindMe() {
   //console.log(key);
   var output = document.getElementById("out");
@@ -29,11 +39,10 @@ function geoFindMe() {
 
   function success(position) {
     lat = position.coords.latitude;
-    long = position.coords.longitude;
-    output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + long + '°</p>';
-    var position = [lat, long];
-    console.log(position);
-    return position;
+    lon = position.coords.longitude;
+    output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
+    var local = {lat: lat, lon: lon};
+    return local;
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -45,19 +54,22 @@ function geoFindMe() {
   }
 }
 
-function findSpots(position) {
-  if (key == "") {
+function findSpots(local) {
+  console.log(local);
+  console.log("It works thus far!");
+  /*if (key == "") {
     findMap()
     return;
   }
   geoFindMe();
   territory();
+  //TODO: change these to match incoming 
   lat = position[0];
-  long = position[1];
+  lon = position[1];
 
   var output = document.getElementById("out2");
-  output.innerHTML = "<p>Works this far!</p>";
-  /*var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=" + far + "&types=restaurant&key=" + key;
+  output.innerHTML = "<p>Works this far!</p>";*/
+  /*var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
   return fetch(places, {
       mode: 'no-cors'
     })
@@ -77,28 +89,18 @@ function findSpots(position) {
     }) */
 }
 
-function findMap(position) {
-  var output = document.getElementById("out2");
+function findMap(local) {
+  console.log(local);
+  /* var output = document.getElementById("out2");
   var img = new Image();
   geoFindMe();
-  lat = position[0];
-  long = position[1];
-  console.log(long);
+  lat = local[0];
+  lon = localn[1];
+  console.log(lon);
   //lat and long are undefined - export htem?
   // error out if not available
-  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=300x300&sensor=false";
+  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
-  output.appendChild(img);
+  output.appendChild(img); */
 }
 
-//Radius setting
-function territory() {
-  var output2 = document.getElementById("out2");
-  var unit = document.querySelector('input[name="group1"]:checked').value;
-  if (unit === "miles") {
-    var miles = (far * 0.00062137119223733).toFixed(2)
-    output2.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
-  }
-  var kms = (far / 1000).toFixed(2)
-  output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
-}
