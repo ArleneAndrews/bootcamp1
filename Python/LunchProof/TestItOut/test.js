@@ -13,8 +13,28 @@ box.onkeyup = function () {
 }
 
 //finds location
-document.getElementById("options").addEventListener("click", findMap);
-document.getElementById("feedMe").addEventListener("click", findSpots);
+document.addEventListener('click', function(event) {
+  var event = event || window.event;
+  var element = event.target || event.srcElement;
+
+  // Only respond to button clicks
+  if (element.tagName == 'BUTTON') {
+    if (key == '') {
+      console.log ("No key!");
+      findMap();
+    }
+    
+    // Only do something if this button was still open.
+    if (element.id == 'feedMe') {
+      findSpots();
+    }
+    console.log ("Fallback!");
+    findMap();
+  }
+
+});
+/* var selection =document.getElementById("options").addEventListener("click", findMap);
+document.getElementById("feedMe").addEventListener("click", geoFindMe); */
 
 //Radius setting
 function territory() {
@@ -54,8 +74,7 @@ function geoFindMe() {
   }
 }
 
-function findSpots(local) {
-  console.log(local);
+function findSpots() {
   console.log("It works thus far!");
   /*if (key == "") {
     findMap()
@@ -89,8 +108,9 @@ function findSpots(local) {
     }) */
 }
 
-function findMap(local) {
-  console.log(local);
+function findMap() {
+  console.log("I'm here!");
+  
   /* var output = document.getElementById("out2");
   var img = new Image();
   geoFindMe();
@@ -103,4 +123,3 @@ function findMap(local) {
 
   output.appendChild(img); */
 }
-
