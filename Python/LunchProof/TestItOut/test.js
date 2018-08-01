@@ -1,7 +1,10 @@
 //Globals
+var key = "";
 var box1=document.getElementById("skeleton");
 box1.onkeyup = function () {
 key = box1.value;
+console.log(key);
+return key;
 }
 
 //slider and box match
@@ -17,8 +20,8 @@ box.onkeyup = function () {
 
 //finds correct function
 function dosomething(source){
+    var mode = source.id;
   console.log(key);
-  var mode = source.id;
   if(key === '') {
     console.log ("No key!");
     findMap();
@@ -32,6 +35,7 @@ function dosomething(source){
     findMap();
   }
 };
+
 
 
 //Radius setting
@@ -109,8 +113,7 @@ function findSpots() {
 
 function findMap() {
   console.log("I'm here!");
-} 
-  /* var output = document.getElementById("out2");
+  var output = document.getElementById("out2");
   var img = new Image();
   geoFindMe();
   lat = local[0];
@@ -121,4 +124,4 @@ function findMap() {
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
   output.appendChild(img); 
-};*/
+};
