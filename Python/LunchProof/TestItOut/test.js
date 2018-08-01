@@ -1,5 +1,8 @@
 //Globals
-var key = document.getElementById("skeleton").value;
+var box1=document.getElementById("skeleton");
+box1.onkeyup = function () {
+key = box1.value;
+}
 
 //slider and box match
 var slider = document.getElementById('distance');
@@ -12,25 +15,24 @@ box.onkeyup = function () {
   slider.value = box.value;
 }
 
-//finds location
-document.addEventListener('click', function(event) {
-  var event = event || window.event;
-  var element = event.target || event.srcElement;
-
-  // Only respond to button clicks
-  if (element.tagName == 'BUTTON') {
-    if (element.id == 'feedMe'){
-      if(key == '') {
-        console.log ("No key!");
-        findMap();
-      }
-    findSpots();
-    }
+//finds correct function
+function dosomething(source){
+  console.log(key);
+  var mode = source.id;
+  if(key === '') {
+    console.log ("No key!");
     findMap();
   }
-});
-/* var selection =document.getElementById("options").addEventListener("click", findMap);
-document.getElementById("feedMe").addEventListener("click", geoFindMe); */
+  else if (mode == 'feedMe') {
+    console.log ("Find a spot!");
+    findSpots();
+  }
+  else {
+    console.log ("Show 'em all!");
+    findMap();
+  }
+};
+
 
 //Radius setting
 function territory() {
