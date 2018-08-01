@@ -19,19 +19,15 @@ document.addEventListener('click', function(event) {
 
   // Only respond to button clicks
   if (element.tagName == 'BUTTON') {
-    if (key == '') {
-      console.log ("No key!");
-      findMap();
+    if (element.id == 'feedMe'){
+      if(key == '') {
+        console.log ("No key!");
+        findMap();
+      }
+    findSpots();
     }
-    
-    // Only do something if this button was still open.
-    if (element.id == 'feedMe') {
-      findSpots();
-    }
-    console.log ("Fallback!");
     findMap();
   }
-
 });
 /* var selection =document.getElementById("options").addEventListener("click", findMap);
 document.getElementById("feedMe").addEventListener("click", geoFindMe); */
@@ -76,6 +72,7 @@ function geoFindMe() {
 
 function findSpots() {
   console.log("It works thus far!");
+};
   /*if (key == "") {
     findMap()
     return;
@@ -105,12 +102,12 @@ function findSpots() {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-    }) */
-}
+    }) 
+}*/
 
 function findMap() {
   console.log("I'm here!");
-  
+} 
   /* var output = document.getElementById("out2");
   var img = new Image();
   geoFindMe();
@@ -121,5 +118,5 @@ function findMap() {
   // error out if not available
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
-  output.appendChild(img); */
-}
+  output.appendChild(img); 
+};*/
