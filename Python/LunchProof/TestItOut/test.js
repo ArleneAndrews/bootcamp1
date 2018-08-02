@@ -120,8 +120,8 @@ function findMap() {
   //error here
   //zoom has to be floored - 10 to 20 is the range
   output.innerHTML = lon;
-}/*
-  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
-  output.appendChild(img); 
-};*/
+  /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
+
+  output.appendChild(img); */
+};
