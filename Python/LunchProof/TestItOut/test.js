@@ -1,9 +1,12 @@
 //Globals
+var local =[];
+var radius ="";
 var key = "";
+
+//key 'fetching'
 var box1=document.getElementById("skeleton");
 box1.onkeyup = function () {
 key = box1.value;
-console.log(key);
 return key;
 }
 
@@ -51,7 +54,6 @@ function territory() {
 }
 
 function geoFindMe() {
-  //console.log(key);
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -111,16 +113,16 @@ function findSpots() {
     }) 
 }*/
 
-function findMap() {
+function findMap(local) {
   console.log("I'm here!");
   var output = document.getElementById("out2");
   var img = new Image();
   geoFindMe();
+  //error here
   lat = local[0];
-  lon = localn[1];
+  lon = local[1];
+  //zoom has to be floored - 10 to 20 is the range
   console.log(lon);
-  //lat and long are undefined - export htem?
-  // error out if not available
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
   output.appendChild(img); 
