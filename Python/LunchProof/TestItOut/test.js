@@ -1,6 +1,7 @@
 //Globals
-var local =[];
-var radius ="";
+var lat = 0;
+var lon = 0;
+var radius = 0;
 var key = "";
 
 //key 'fetching'
@@ -65,8 +66,6 @@ function geoFindMe() {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
-    var local = {lat: lat, lon: lon};
-    return local;
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -80,7 +79,7 @@ function geoFindMe() {
 
 function findSpots() {
   console.log("It works thus far!");
-};
+
   /*if (key == "") {
     findMap()
     return;
@@ -110,20 +109,19 @@ function findSpots() {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-    }) 
-}*/
+    })*/ 
+}
 
-function findMap(local) {
+function findMap() {
   console.log("I'm here!");
   var output = document.getElementById("out2");
-  var img = new Image();
+  //var img = new Image();
   geoFindMe();
   //error here
-  lat = local[0];
-  lon = local[1];
   //zoom has to be floored - 10 to 20 is the range
-  console.log(lon);
+  output.innerHTML = lon;
+}/*
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
   output.appendChild(img); 
-};
+};*/
