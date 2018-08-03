@@ -24,7 +24,7 @@ box.onkeyup = function () {
 
 //finds correct function
 function dosomething(source){
-  var mode = source.id;
+    var mode = source.id;
   console.log(key);
   if(key === '') {
     console.log ("No key!");
@@ -54,7 +54,7 @@ function territory() {
   output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
 }
 
-async function geoFindMe() {
+function geoFindMe() {
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -66,7 +66,6 @@ async function geoFindMe() {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
-    return;
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -113,13 +112,15 @@ function findSpots() {
     })*/ 
 }
 
-function findMap() {
-   console.log("I'm here!");
-   //var img = new Image();
+async function findMap() {
+
+    console.log("I'm here!");
+  var output = document.getElementById("out2");
+  //var img = new Image();
   geoFindMe();
   //error here
   //zoom has to be floored - 10 to 20 is the range
-  var output = document.getElementById("out2");
+  let longit = await lon;
   output.innerHTML = longit;
 
   /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
