@@ -24,6 +24,7 @@ box.onkeyup = function () {
 
 //finds correct function
 function dosomething(source){
+  img.remove();
     var mode = source.id;
   console.log(key);
   if(key === '') {
@@ -112,14 +113,16 @@ function findSpots() {
     })*/ 
 }
 
-function findMap() {
-  console.log("I'm here!");
+async function findMap() {
+  
+    console.log("I'm here!");
   var output = document.getElementById("out2");
   //var img = new Image();
   geoFindMe();
   //error here
   //zoom has to be floored - 10 to 20 is the range
-  output.innerHTML = lon;
+  let longit = await lon;
+  output.innerHTML = longit;
 
   /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
