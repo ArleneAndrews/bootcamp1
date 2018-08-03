@@ -113,11 +113,12 @@ function findSpots() {
 }
 
 async function findMap() {
-
-    console.log("I'm here!");
+  console.log("I'm here!");
   var output = document.getElementById("out2");
   //var img = new Image();
+  if(lat == 0){
   geoFindMe();
+  }
   //error here
   //zoom has to be floored - 10 to 20 is the range
   let longit = await lon;
