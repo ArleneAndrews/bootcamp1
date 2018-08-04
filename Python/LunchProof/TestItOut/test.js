@@ -1,13 +1,7 @@
 //Globals
-var lat = 0;
-var lon = 0;
-var radius = 0;
-var key = "";
-
-//key 'fetching'
 var box1=document.getElementById("skeleton");
 box1.onkeyup = function () {
-key = box1.value;
+var key = box1.value;
 return key;
 }
 
@@ -24,8 +18,8 @@ box.onkeyup = function () {
 
 //finds correct function
 function dosomething(source){
-    var mode = source.id;
   console.log(key);
+  var mode = source.id;
   if(key === '') {
     console.log ("No key!");
     findMap();
@@ -41,7 +35,6 @@ function dosomething(source){
 };
 
 
-
 //Radius setting
 function territory() {
   var output2 = document.getElementById("out2");
@@ -55,6 +48,7 @@ function territory() {
 }
 
 function geoFindMe() {
+  //console.log(key);
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -66,6 +60,8 @@ function geoFindMe() {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
+    var local = {lat: lat, lon: lon};
+    return local;
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -79,7 +75,7 @@ function geoFindMe() {
 
 function findSpots() {
   console.log("It works thus far!");
-
+};
   /*if (key == "") {
     findMap()
     return;
@@ -109,22 +105,22 @@ function findSpots() {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-    })*/ 
-}
+    }) 
+}*/
 
-async function findMap() {
+function findMap() {
   console.log("I'm here!");
+}
+/*
   var output = document.getElementById("out2");
-  //var img = new Image();
-  if(lat == 0){
+  var img = new Image();
   geoFindMe();
-  }
-  //error here
-  //zoom has to be floored - 10 to 20 is the range
-  let longit = await lon;
-  output.innerHTML = longit;
+  lat = local[0];
+  lon = local[1];
+  console.log(lon);
+  //lat and long are undefined - export htem?
+  // error out if not available
+  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
-  /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
-
-  output.appendChild(img); */
-};
+  output.appendChild(img); 
+};*/
