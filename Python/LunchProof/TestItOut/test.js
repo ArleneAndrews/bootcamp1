@@ -25,7 +25,6 @@ box.onkeyup = function () {
 //finds correct function
 function dosomething(source){
     var mode = source.id;
-  console.log(key);
   if(key === '') {
     console.log ("No key!");
     findMap();
@@ -112,17 +111,37 @@ function findSpots() {
     })*/ 
 }
 
-async function findMap() {
-  console.log("I'm here!");
-  var output = document.getElementById("out2");
+function findMap() {
+  
   //var img = new Image();
   if(lat == 0){
-  geoFindMe();
+    var promise = new Promise(function(resolve, reject) {
+      console.log("I'm here!");
+      var output = document.getElementById("out2");
+      geoFindMe();
+    
+      if (lat != 0/* everything turned out fine */) {
+        resolve();
+        output.innerHTML = "Stuff worked!";
+      }
+      else {
+        reject();
+        output.innerHTML = Error("It broke")
+      }
+    });
+
+    promise.then(function(result) {
+      console.log(result); // "Stuff worked!"
+    }, function(err) {
+      console.log(err); // Error: "It broke"
+    });
+  
+  /* then
+  ; */
   }
   //error here
   //zoom has to be floored - 10 to 20 is the range
-  let longit = await lon;
-  output.innerHTML = longit;
+  
 
   /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
