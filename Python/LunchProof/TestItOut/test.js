@@ -1,13 +1,7 @@
 //Globals
-var lat = 0;
-var lon = 0;
-var radius = 0;
-var key = "";
-
-//key 'fetching'
 var box1=document.getElementById("skeleton");
 box1.onkeyup = function () {
-key = box1.value;
+var key = box1.value;
 return key;
 }
 
@@ -40,7 +34,6 @@ function dosomething(source){
 };
 
 
-
 //Radius setting
 function territory() {
   var output2 = document.getElementById("out2");
@@ -54,6 +47,7 @@ function territory() {
 }
 
 function geoFindMe() {
+  //console.log(key);
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -65,6 +59,8 @@ function geoFindMe() {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
+    var local = {lat: lat, lon: lon};
+    return local;
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -78,7 +74,7 @@ function geoFindMe() {
 
 function findSpots() {
   console.log("It works thus far!");
-
+};
   /*if (key == "") {
     findMap()
     return;
@@ -108,8 +104,8 @@ function findSpots() {
         div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
         document.body.appendChild(div);
       }
-    })*/ 
-}
+    }) 
+}*/
 
 function findMap() {
   
