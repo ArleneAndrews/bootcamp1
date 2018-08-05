@@ -1,9 +1,15 @@
 //Globals
+var lat = 0;
+var lon = 0;
+var far = 0;
+var mode = "";
+var key = "";
+
 var box1=document.getElementById("skeleton");
 box1.onkeyup = function () {
-var key = box1.value;
-return key;
+key = box1.value;
 }
+
 
 //slider and box match
 var slider = document.getElementById('distance');
@@ -17,7 +23,7 @@ box.onkeyup = function () {
 }
 
 //finds correct function
-function dosomething(source){
+function mode(source){
     var mode = source.id;
   if(key === '') {
     console.log ("No key!");
@@ -36,6 +42,7 @@ function dosomething(source){
 
 //Radius setting
 function territory() {
+  far = slider.value;
   var output2 = document.getElementById("out2");
   var unit = document.querySelector('input[name="group1"]:checked').value;
   if (unit === "miles") {
@@ -59,8 +66,8 @@ function geoFindMe() {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
-    var local = {lat: lat, lon: lon};
-    return local;
+    territory();
+    mode();
   }
 
   output.innerHTML = "<p>Locating…</p>";
