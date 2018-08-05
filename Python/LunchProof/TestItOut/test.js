@@ -112,12 +112,12 @@ function findMap() {
   //var img = new Image();
   if(lat == 0){
     var promise = new Promise(function(resolve, reject) {
-      console.log("I'm here!");
+      
       var output = document.getElementById("out2");
       geoFindMe();
     
       if (lat != 0/* everything turned out fine */) {
-        resolve();
+        resolve(console.log(lat));
         output.innerHTML = "Stuff worked!";
       }
       else {
