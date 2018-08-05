@@ -2,7 +2,7 @@
 var lat = 0;
 var lon = 0;
 var far = 0;
-var mode = "";
+var buttonmode = "";
 var key = "";
 
 var box1=document.getElementById("skeleton");
@@ -23,13 +23,12 @@ box.onkeyup = function () {
 }
 
 //finds correct function
-function mode(source){
-    var mode = source.id;
-  if(key === '') {
-    console.log ("No key!");
-    findMap();
-  }
-  else if (mode == 'feedMe') {
+function mode(){
+  if (mode == 'feedMe') {
+    if(key === '') {
+      console.log ("No key!");
+      findMap();
+    }
     console.log ("Find a spot!");
     findSpots();
   }
@@ -51,10 +50,11 @@ function territory() {
   }
   var kms = (far / 1000).toFixed(2)
   output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
+  mode();
 }
 
-function geoFindMe() {
-  //console.log(key);
+function geoFindMe(source) {
+  buttonmode = source.id;
   var output = document.getElementById("out");
 
   if (!navigator.geolocation) {
@@ -67,7 +67,6 @@ function geoFindMe() {
     lon = position.coords.longitude;
     output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
     territory();
-    mode();
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -115,38 +114,9 @@ function findSpots() {
 }*/
 
 function findMap() {
-  
-  //var img = new Image();
-  if(lat == 0){
-    var promise = new Promise(function(resolve, reject) {
-      
-      var output = document.getElementById("out2");
-      geoFindMe();
-    
-      if (lat != 0/* everything turned out fine */) {
-        resolve(console.log(lat));
-        output.innerHTML = "Stuff worked!";
-      }
-      else {
-        reject();
-        output.innerHTML = Error("It broke")
-      }
-    });
+  var img = new Image();
+  var output = document.getElementById("out3");
+  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
 
-    promise.then(function(result) {
-      console.log(result); // "Stuff worked!"
-    }, function(err) {
-      console.log(err); // Error: "It broke"
-    });
-  
-  /* then
-  ; */
-  }
-  //error here
-  //zoom has to be floored - 10 to 20 is the range
-  
-
-  /*img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
-
-  output.appendChild(img); */
+  output.appendChild(img);
 };
