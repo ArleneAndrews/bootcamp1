@@ -4,38 +4,37 @@ var lon = 0;
 var far = 0;
 var zoom = 0;
 var buttonmode = "";
-var key = "";
+var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
 // Cheat for API key
 var box1 = document.getElementById("skeleton");
-box1.onkeyup = function () {
+box1.ononchange = function () {
   key = box1.value;
 }
 
 //Radius setting
 function territory() {
   far = slider.value;
-  var output2 = document.getElementById("out2");
+  var output = document.getElementById("out");
   var unit = document.querySelector('input[name="group1"]:checked').value;
-  console.log(unit);
-  if (unit === "miles") {
+  if (unit == "miles") {
     var miles = (far * 0.00062137119223733).toFixed(2)
-    output2.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
-    }
-  var kms = (far / 1000).toFixed(2)
-  output2.innerHTML = '<p>Radius is ' + kms + ' km </p>';
-  mode();
+    output.innerHTML = '<p>Radius is ' + miles + ' miles </p>';
+  } else {
+    var kms = (far / 1000).toFixed(2)
+    output.innerHTML = '<p>Radius is ' + kms + ' km </p>';
+  }
 }
 
 
 //finds correct function
 function mode() {
-  if (mode == 'feedMe') {
-    if (key === '') {
+  if (buttonmode == 'feedMe') {
+    /* if (key === '') {
       console.log("No key!");
       findMap();
-    }
+    } */
     console.log("Find a spot!");
     findSpots();
   } else {
@@ -46,7 +45,7 @@ function mode() {
 
 //set zoom for map
 function zoomLevel() {
-  switch (far) {
+  switch (true) {
     case (far < 1500):
       zoom = 20;
       break;
@@ -95,8 +94,9 @@ function geoFindMe(source) {
   function success(position) {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
-    output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
+    //output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
     territory();
+    mode();
   }
 
   output.innerHTML = "<p>Locating…</p>";
@@ -110,38 +110,40 @@ function geoFindMe(source) {
 
 function findSpots() {
   console.log("It works thus far!");
-};
-/*if (key == "") {
-  findMap()
-  return;
+  // MOVED CODE STARTS HERE
+  var mydiv = document.getElementById('out3');
+  while (mydiv.firstChild) {
+    mydiv.removeChild(mydiv.firstChild);
+  }
+ /*  zoomLevel();
+  var img = new Image();
+  var output = document.getElementById("out3");
+  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
+  output.appendChild(img); 
+  place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw */
+  //END MOVED CODE
+  var output = document.getElementById("out2");
+  output.innerHTML = "<p>Works this far!</p>";
+  var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
+    return fetch(places, {
+        mode: 'no-cors'
+      })
+      .then(function (response) {
+        //NULL here
+        return response.json()
+      })
+      .then(function (myJson) {
+        var listing = myJson;
+        console.log(listing);
+
+        for (var i = 0, l = listing.length; i < l; i++) {
+          var spot = listing[i];
+          var div = document.createElement('div');
+          div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
+          document.body.appendChild(div);
+        }
+      })
 }
-geoFindMe();
-territory();
-//TODO: change these to match incoming 
-lat = position[0];
-lon = position[1];
-
-var output = document.getElementById("out2");
-output.innerHTML = "<p>Works this far!</p>";*/
-/*var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
-  return fetch(places, {
-      mode: 'no-cors'
-    })
-    .then(function (response) {
-      return response.json()
-    })
-    .then(function (myJson) {
-      var listing = myJson;
-      console.log(listing);
-
-      for (var i = 0, l = listing.length; i < l; i++) {
-        var spot = listing[i];
-        var div = document.createElement('div');
-        div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
-        document.body.appendChild(div);
-      }
-    }) 
-}*/
 
 function findMap() {
   var mydiv = document.getElementById('out3');
@@ -149,10 +151,8 @@ function findMap() {
     mydiv.removeChild(mydiv.firstChild);
   }
   zoomLevel();
-  console.log(zoom);
   var img = new Image();
   var output = document.getElementById("out3");
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
-
   output.appendChild(img);
 };
