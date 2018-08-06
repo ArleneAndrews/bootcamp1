@@ -114,6 +114,10 @@ function findSpots() {
 }*/
 
 function findMap() {
+  var mydiv = document.getElementById('out3');
+while(mydiv.firstChild) {
+  mydiv.removeChild(mydiv.firstChild);
+}
   var img = new Image();
   var output = document.getElementById("out3");
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=300x300&sensor=false";
