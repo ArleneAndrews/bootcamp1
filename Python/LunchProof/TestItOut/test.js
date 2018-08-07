@@ -125,13 +125,13 @@ function findSpots() {
   var output = document.getElementById("out2");
   output.innerHTML = "<p>Works this far!</p>";
   var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
-    return fetch(places, {
+     get(places, {
         mode: 'no-cors'
       })
       .then(function (response) {
         //NULL here
         return response.json()
-      })
+       })/*
       .then(function (myJson) {
         var listing = myJson;
         console.log(listing);
@@ -142,7 +142,7 @@ function findSpots() {
           div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
           document.body.appendChild(div);
         }
-      })
+      }) */
 }
 
 function findMap() {
