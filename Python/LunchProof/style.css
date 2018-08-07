@@ -18,7 +18,7 @@ html, body {
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 100%; /* Full-width */
+  width: 60%; /* 60%-width */
   height: 20px; /* Specified height */
   background: lightgray; /* Gray background */
   outline: none; /* Remove outline */
@@ -52,10 +52,3 @@ html, body {
   background: #4CAF50;
   cursor: pointer;
 }
-
-#feedMe {
-  width: 25px;
-  height: 25px;
-  border: 0;
-}
-   
