@@ -8,11 +8,11 @@ var key = "AIzaSyDYPbAbZwxr7E13";
 var key2 ="PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
-// Cheat for API key
+/* // Cheat for API key
 var box1 = document.getElementById("skeleton");
 box1.ononchange = function () {
   key = box1.value;
-}
+} */
 
 //Radius setting
 function territory() {
@@ -44,7 +44,7 @@ function mode() {
   }
 };
 
-//set zoom for map
+/* //set zoom for map
 function zoomLevel() {
   switch (true) {
     case (far < 1500):
@@ -81,7 +81,7 @@ function zoomLevel() {
       zoom = 10;
       break;
   }
-}
+} */
 
 function geoFindMe(source) {
   buttonmode = source.id;
