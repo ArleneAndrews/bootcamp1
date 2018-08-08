@@ -4,14 +4,15 @@ var lon = 0;
 var far = 0;
 var zoom = 0;
 var buttonmode = "";
-var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
+var key = "AIzaSyDYPbAbZwxr7E13";
+var key2 ="PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
-// Cheat for API key
+/* // Cheat for API key
 var box1 = document.getElementById("skeleton");
 box1.ononchange = function () {
-    key = box1.value;
-}
+  key = box1.value;
+} */
 
 //Radius setting
 function territory() {
@@ -43,44 +44,44 @@ function mode() {
     }
 };
 
-//set zoom for map
+/* //set zoom for map
 function zoomLevel() {
-    switch (true) {
-        case (far < 1500):
-            zoom = 20;
-            break;
-        case (far < 5000):
-            zoom = 19;
-            break;
-        case (far < 10000):
-            zoom = 18;
-            break;
-        case (far < 15000):
-            zoom = 17;
-            break;
-        case (far < 20000):
-            zoom = 16;
-            break;
-        case (far < 25000):
-            zoom = 15;
-            break;
-        case (far < 30000):
-            zoom = 14;
-            break;
-        case (far < 35000):
-            zoom = 13;
-            break;
-        case (far < 40000):
-            zoom = 12;
-            break;
-        case (far < 45000):
-            zoom = 11;
-            break;
-        case (far < 40000):
-            zoom = 10;
-            break;
-    }
-}
+  switch (true) {
+    case (far < 1500):
+      zoom = 20;
+      break;
+    case (far < 5000):
+      zoom = 19;
+      break;
+    case (far < 10000):
+      zoom = 18;
+      break;
+    case (far < 15000):
+      zoom = 17;
+      break;
+    case (far < 20000):
+      zoom = 16;
+      break;
+    case (far < 25000):
+      zoom = 15;
+      break;
+    case (far < 30000):
+      zoom = 14;
+      break;
+    case (far < 35000):
+      zoom = 13;
+      break;
+    case (far < 40000):
+      zoom = 12;
+      break;
+    case (far < 45000):
+      zoom = 11;
+      break;
+    case (far < 40000):
+      zoom = 10;
+      break;
+  }
+} */
 
 function geoFindMe(source) {
     buttonmode = source.id;
