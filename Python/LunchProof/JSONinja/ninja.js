@@ -111,21 +111,14 @@ function geoFindMe(source) {
 
 function findSpots() {
   console.log("It works thus far!");
-  // MOVED CODE STARTS HERE
   var mydiv = document.getElementById('out3');
   while (mydiv.firstChild) {
     mydiv.removeChild(mydiv.firstChild);
   }
- /*  zoomLevel();
-  var img = new Image();
-  var output = document.getElementById("out3");
-  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
-  output.appendChild(img); 
-  place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw */
-  //END MOVED CODE
+   //place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw
   var output = document.getElementById("out2");
   output.innerHTML = "<p>Works this far!</p>";
-  var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
+  var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key+key2;
      get(places, {
         mode: 'no-cors'
       })
