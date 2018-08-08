@@ -4,7 +4,8 @@ var lon = 0;
 var far = 0;
 var zoom = 0;
 var buttonmode = "";
-var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
+var key = "AIzaSyDYPbAbZwxr7E13";
+var key2 ="PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
 // Cheat for API key
