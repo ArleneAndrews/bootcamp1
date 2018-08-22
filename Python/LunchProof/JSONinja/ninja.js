@@ -5,7 +5,7 @@ var far = 0;
 var zoom = 0;
 var buttonmode = "";
 var key = "AIzaSyDYPbAbZwxr7E13";
-var key2 ="PdJ6B_ExhBXbZQiL1Sw";
+var key2 = "PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
 /* // Cheat for API key
@@ -15,16 +15,16 @@ box1.ononchange = function () {
 } */
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(function(registration) {
-        // Registration was successful
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, function(err) {
-        // registration failed :(
-        console.log('ServiceWorker registration failed: ', err);
-      });
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
     });
-  }
+}
 
 //Radius setting
 function territory() {
