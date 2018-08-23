@@ -1,44 +1,17 @@
 {
-    "lang": "en",
-    "dir": "ltr",
-    "name": "What You Want",
-    "description": "Find a random resturant to eat in",
-    "short_name": "WhatYouWant",
-    /* "icons": [
-        {
-            "src": "icon/lowres.webp",
-            "sizes": "64x64",
-            "type": "image/webp"
-        },
-        {
-            "src": "icon/lowres.png",
-            "sizes": "64x64"
-        },
-        {
-            "src": "icon/hd_hi",
-            "sizes": "128x128"
-        }
-    ], */
+  "lang": "en",
+  "dir": "ltr",
+  "name": "What You Want",
+  "description": "Find a random resturant to eat in",
+  "short_name": "WhatYouWant",
+  "scope": "/racer/",
+  "start_url": "/racer/start.html",
+  "display": "fullscreen",
+  "theme_color": "white",
+  "background_color": "white",
+  "serviceworker": {
+    "src": "sw.js",
     "scope": "/racer/",
-    "start_url": "/racer/start.html",
-    "display": "fullscreen",
-    "theme_color": "white",
-    "background_color": "white",
-    "serviceworker": {
-        "src": "sw.js",
-        "scope": "/racer/",
-        "update_via_cache": "none"
-    },
-    /* "screenshots": [
-        {
-            "src": "screenshots/in-game-1x.jpg",
-            "sizes": "640x480",
-            "type": "image/jpeg"
-        },
-        {
-            "src": "screenshots/in-game-2x.jpg",
-            "sizes": "1280x920",
-            "type": "image/jpeg"
-        }
-    ] */
+    "update_via_cache": "none"
+  }
 }
