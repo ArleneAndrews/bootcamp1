@@ -1,6 +1,7 @@
 #map {
   height: 100%;
 }
+
 /* Optional: Makes the sample page fill the window. 
 html, body {
   height: 100%;
@@ -9,39 +10,50 @@ html, body {
 }*/
 
 .slidecontainer {
-  width: 90%; /* Width of the outside container */
+  width: 90%;
+  /* Width of the outside container */
   margin: auto;
   height: 50px;
 }
 
 /* The slider itself */
+
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
+  /* Override default CSS styles */
   appearance: none;
-  width: 60%; /* 60%-width */
-  height: 20px; /* Specified height */
-  background: lightgray; /* Gray background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 60%;
+  /* 60%-width */
+  height: 20px;
+  /* Specified height */
+  background: lightgray;
+  /* Gray background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
   transition: opacity .2s;
-  border-radius: 5px; 
- 
+  border-radius: 5px;
 }
 
 /* Mouse-over effects */
+
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1;
+  /* Fully shown on mouse-over */
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
   border: 0;
-  background: #4CAF50;
+  background: 0, 158, 115;
   cursor: pointer;
 }
 
@@ -49,6 +61,8 @@ html, body {
   width: 25px;
   height: 25px;
   border: 0;
-  background: #4CAF50;
+  background: 0, 158, 115;
   cursor: pointer;
 }
+
+/* NOTE: Use orange for dot on spots */

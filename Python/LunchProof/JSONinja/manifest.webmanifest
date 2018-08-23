@@ -4,14 +4,13 @@
   "name": "What You Want",
   "description": "Find a random resturant to eat in",
   "short_name": "WhatYouWant",
-  "scope": "/racer/",
-  "start_url": "/racer/start.html",
+  "scope": "/wyw/",
+  "start_url": "/wyw/start.html",
   "display": "fullscreen",
   "theme_color": "white",
   "background_color": "white",
   "serviceworker": {
     "src": "sw.js",
-    "scope": "/racer/",
-    "update_via_cache": "none"
+    "scope": "/wyw/"
   }
 }
