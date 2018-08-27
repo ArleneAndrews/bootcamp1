@@ -7,12 +7,6 @@ var buttonmode = "";
 var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
 
-// Cheat for API key
-var box1 = document.getElementById("skeleton");
-box1.ononchange = function () {
-  key = box1.value;
-}
-
 //Radius setting
 function territory() {
   far = slider.value;
@@ -115,34 +109,35 @@ function findSpots() {
   while (mydiv.firstChild) {
     mydiv.removeChild(mydiv.firstChild);
   }
- /*  zoomLevel();
-  var img = new Image();
-  var output = document.getElementById("out3");
-  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
-  output.appendChild(img); 
-  place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw */
+  /*  zoomLevel();
+   var img = new Image();
+   var output = document.getElementById("out3");
+   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
+   output.appendChild(img); 
+   place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw */
   //END MOVED CODE
   var output = document.getElementById("out2");
   output.innerHTML = "<p>Works this far!</p>";
-  var places =  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
-     get(places, {
-        mode: 'no-cors'
-      })
-      .then(function (response) {
-        //NULL here
-        return response.json()
-       })/*
-      .then(function (myJson) {
-        var listing = myJson;
-        console.log(listing);
+  var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
+  get(places, {
+      mode: 'no-cors'
+    })
+    .then(function (response) {
+      //NULL here
+      return response.json()
+    })
+  /*
+        .then(function (myJson) {
+          var listing = myJson;
+          console.log(listing);
 
-        for (var i = 0, l = listing.length; i < l; i++) {
-          var spot = listing[i];
-          var div = document.createElement('div');
-          div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
-          document.body.appendChild(div);
-        }
-      }) */
+          for (var i = 0, l = listing.length; i < l; i++) {
+            var spot = listing[i];
+            var div = document.createElement('div');
+            div.innerHTML = 'Name ' + spot.name + ' Address ' + spot.addy + 'Open now? ' + spot.opening_hours.open_now;
+            document.body.appendChild(div);
+          }
+        }) */
 }
 
 function findMap() {
