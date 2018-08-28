@@ -185,3 +185,17 @@ function findMap() {
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
     output.appendChild(img);
 };
+/* /suggested code
+switch (idServiceCode) {
+    case 1: svc = new PoiServiceArlene()
+    case 2: svc = new PoiServiceYelp()
+    case 3: svc = new PoiSercieTripAdvisor(LimitSearchItems = 10);
+}
+PointOfInterest[] SearchItems(double searchRadius)
+{
+    result.add(new PointOfInterest("shady rest", -74, 32);
+    result.add(new PointOfInterest("petticoat junction", -74.22, 32.1);
+    // other cool places to follow
+
+}
+//end suggested code */
