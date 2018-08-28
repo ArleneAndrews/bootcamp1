@@ -110,6 +110,7 @@ function geoFindMe(source) {
         //output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + lon + '°</p>';
         territory();
         mode();
+        call();
     }
 
     output.innerHTML = "<p>Locating…</p>";
@@ -184,6 +185,26 @@ function findMap() {
     var output = document.getElementById("out3");
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
     output.appendChild(img);
+};
+
+function call() {
+    switch (true) {
+        case (button == TA):
+            //add Trip Advisor stuff  
+            break;
+        case (button == YP):
+            //add Yelp stuff
+            break;
+        case (button == Zo):
+            //add zomato stuff
+            break;
+        case (button == OT):
+            //add other stuff
+            break;
+        case (button == Me):
+            //add my history stuff
+            break;
+    }
 };
 /* /suggested code
 switch (idServiceCode) {
