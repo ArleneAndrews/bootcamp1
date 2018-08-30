@@ -195,7 +195,7 @@ function call() {
         case (button == YP):
             //add Yelp stuff
             break;
-        case (button == Zo):
+        case (button == ZO):
             //add zomato stuff
             break;
         case (button == OT):
@@ -212,6 +212,7 @@ switch (idServiceCode) {
     case 2: svc = new PoiServiceYelp()
     case 3: svc = new PoiSercieTripAdvisor(LimitSearchItems = 10);
 }
+//TODO
 PointOfInterest[] SearchItems(double searchRadius)
 {
     result.add(new PointOfInterest("shady rest", -74, 32);
