@@ -44,10 +44,12 @@ function territory() {
 //finds correct function
 function mode() {
     if (buttonmode == 'feedMe') {
-        /* if (key === '') {
-          console.log("No key!");
-          findMap();
-        } */
+        <select id ="ddl" name="ddl" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+        <option value='ME' selected>My Venues</option>
+        <option value='TA'>TripAdviosor</option>
+        <option value='YP'>Yelp</option>
+        <option value='ZO'>Zomato</option>
+      </select>
         console.log("Find a spot!");
         findSpots();
     } else {
@@ -201,7 +203,7 @@ function call() {
         case (button == OT):
             //add other stuff
             break;
-        case (button == Me):
+        case (button == ME):
             //add my history stuff
             break;
     }
