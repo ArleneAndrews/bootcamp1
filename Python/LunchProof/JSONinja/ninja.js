@@ -44,12 +44,6 @@ function territory() {
 //finds correct function
 function mode() {
     if (buttonmode == 'feedMe') {
-        <select id ="ddl" name="ddl" onmousedown="this.value='';" onchange="jsFunction(this.value);">
-        <option value='ME' selected>My Venues</option>
-        <option value='TA'>TripAdviosor</option>
-        <option value='YP'>Yelp</option>
-        <option value='ZO'>Zomato</option>
-      </select>
         console.log("Find a spot!");
         findSpots();
     } else {

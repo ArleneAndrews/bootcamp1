@@ -25,12 +25,14 @@
                 <span>miles</span>
             </label>
             <br>
-            <button type="button" id="TA" data-rel="popup" alt="Show all places" onclick='geoFindMe(this);'>TripAdvisor</a>
-                <button type="button" id="ZO" data-rel="popup" alt="Show all places" onclick='geoFindMe(this);'>Zomato</a>
-                    <button type="button" id="YP" data-rel="popup" alt="Show all places" onclick='geoFindMe(this);'>Yelp</a>
-                        <button type="button" id="ME" data-rel="popup" alt="Show all places" onclick='geoFindMe(this);'>Previously
-                            visited</a><br>
-                            <button type="button" id="feedMe" data-rel="popup" alt="Choose a random location" onclick='geoFindMe(this);'>Feed me!</a>
+            <!--<button type="button" id="TA" data-rel="popup" alt="Show all places" onclick='geoFindMe(this);'>Show All</a>-->
+                <select id ="ddl" name="ddl" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                    <option value='ME' selected>Visited</option>
+                    <option value='TA'>TripAdviosor</option>
+                    <option value='YP'>Yelp</option>
+                    <option value='ZO'>Zomato</option>
+                  </select>
+            <button type="button" id="feedMe" data-rel="popup" alt="Choose a random location" onclick='geoFindMe(this);'>Feed me!</a>
         </form>
     </div>
     <br>
