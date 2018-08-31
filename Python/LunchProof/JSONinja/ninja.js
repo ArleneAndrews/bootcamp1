@@ -190,6 +190,7 @@ function call() {
             break;
         case (button == YP):
             //add Yelp stuff
+            GET "https://api.yelp.com/v3/businesses/search?term=restaurants&latitude="+lat+"&longitude=" +lon +"&radius="+radius+"token="+Yelpkey;
             break;
         case (button == ZO):
             //add zomato stuff
