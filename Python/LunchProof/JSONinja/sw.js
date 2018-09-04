@@ -6,7 +6,6 @@ self.addEventListener("install", function (event) {
                 "index.html",
                 "style.css",
                 "ninja.js",
-                "key.env",
                 "manifest.webmanifest"
             ]);
         })

@@ -7,12 +7,16 @@ var buttonmode = "";
 var key = "AIzaSyDYPbAbZwxr7E13";
 var key2 = "PdJ6B_ExhBXbZQiL1Sw";
 var slider = document.getElementById('distance');
+var secret =key.env;
+console.log(secret);
 
 /* // Cheat for API key
 var box1 = document.getElementById("skeleton");
 box1.ononchange = function () {
   key = box1.value;
 } */
+
+
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
@@ -190,7 +194,14 @@ function call() {
             break;
         case (button == YP):
             //add Yelp stuff
-            GET "https://api.yelp.com/v3/businesses/search?term=restaurants&latitude="+lat+"&longitude=" +lon +"&radius="+radius+"token="+Yelpkey;
+            function loadYelp(Yelpkey) { 
+                //debugger
+                // show has many reviews through the user for 3rd req
+                $.getJSON(`https://api.yelp.com/v3/businesses/search?term=restaurants&latitude="+lat+"&longitude=" +lon +"&radius="+radius+"token="+Yelpkey`, json => {
+                  console.log("Oogie Boogie")
+              })
+            }
+           loadYelp(Yelpkey);
             break;
         case (button == ZO):
             //add zomato stuff
