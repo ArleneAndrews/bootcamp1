@@ -4,7 +4,7 @@ var lon = 0;
 var far = 0;
 var zoom = 0;
 var buttonmode = "";
-var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
+var key = "";
 var slider = document.getElementById('distance');
 
 //Radius setting
@@ -120,7 +120,7 @@ function findSpots() {
   output.innerHTML = "<p>Works this far!</p>";
   var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
   
-    fetch(places, {mode: 'no-cors'})
+    fetch(places, {mode: 'no-cors',  credentials: 'include'  })
     .then(response => {
       return response.json();
     }).then(data => {
