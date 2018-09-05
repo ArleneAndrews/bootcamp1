@@ -4,7 +4,7 @@ var lon = 0;
 var far = 0;
 var zoom = 0;
 var buttonmode = "";
-var key = "AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw";
+var key = "";
 var slider = document.getElementById('distance');
 
 //Radius setting
@@ -70,9 +70,6 @@ function zoomLevel() {
     case (far < 45000):
       zoom = 11;
       break;
-    case (far < 40000):
-      zoom = 10;
-      break;
   }
 }
 
@@ -118,12 +115,14 @@ function findSpots() {
   //END MOVED CODE
   var output = document.getElementById("out2");
   output.innerHTML = "<p>Works this far!</p>";
-  var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + key;
+  var places = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lon + "&radius=" + far + "&types=restaurant&key=" + placekey;
   get(places, {
       mode: 'no-cors'
     })
     .then(function (response) {
       //NULL here
+      var response =response;
+      output.innerHTML = response;
       return response.json()
     })
   /*
