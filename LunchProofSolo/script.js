@@ -37,42 +37,6 @@ function mode() {
   }
 };
 
-//set zoom for map
-function zoomLevel() {
-  switch (true) {
-    case (far < 1500):
-      zoom = 20;
-      break;
-    case (far < 5000):
-      zoom = 19;
-      break;
-    case (far < 10000):
-      zoom = 18;
-      break;
-    case (far < 15000):
-      zoom = 17;
-      break;
-    case (far < 20000):
-      zoom = 16;
-      break;
-    case (far < 25000):
-      zoom = 15;
-      break;
-    case (far < 30000):
-      zoom = 14;
-      break;
-    case (far < 35000):
-      zoom = 13;
-      break;
-    case (far < 40000):
-      zoom = 12;
-      break;
-    case (far < 45000):
-      zoom = 11;
-      break;
-  }
-}
-
 function geoFindMe(source) {
   buttonmode = source.id;
   var output = document.getElementById("out");
@@ -106,12 +70,6 @@ function findSpots() {
   while (mydiv.firstChild) {
     mydiv.removeChild(mydiv.firstChild);
   }
-  /*  zoomLevel();
-   var img = new Image();
-   var output = document.getElementById("out3");
-   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
-   output.appendChild(img); 
-   place = AIzaSyDYPbAbZwxr7E13PdJ6B_ExhBXbZQiL1Sw */
   //END MOVED CODE
   var output = document.getElementById("out2");
   output.innerHTML = "<p>Works this far!</p>";
@@ -144,7 +102,7 @@ function findMap() {
   while (mydiv.firstChild) {
     mydiv.removeChild(mydiv.firstChild);
   }
-  zoomLevel();
+  zoom =(far * .0038).toFixed(0);
   var img = new Image();
   var output = document.getElementById("out3");
   img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=" + zoom + "&size=300x300&sensor=false";
